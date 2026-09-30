@@ -21,8 +21,11 @@ export const donneesProfessionalService = {
   image: `${site.url}/opengraph-image`,
   foundingDate: String(site.anneeCreation),
   areaServed: ["Côte d'Ivoire", "UEMOA"],
+  telephone: site.coordonnees.telephone,
+  email: site.coordonnees.email,
   address: {
     "@type": "PostalAddress",
+    streetAddress: site.coordonnees.quartier,
     addressLocality: "Abidjan",
     addressCountry: "CI",
   },

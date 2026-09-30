@@ -16,10 +16,13 @@ export const site = {
   anneeCreation: 2022,
   gerant: "M. ATTEMENE Zatri Jean-Jacques",
   coordonnees: {
-    adresse: "[À CONFIRMER : Abidjan, Riviera Faya]",
+    adresse: "Riviera Faya, Abidjan",
+    quartier: "Riviera Faya",
     ville: "Abidjan",
     pays: "Côte d'Ivoire",
-    telephone: A_COMPLETER,
+    /** Même numéro que le WhatsApp. */
+    telephone: "+225 05 84 37 48 48",
+    telephoneLien: "tel:+2250584374848",
     email: "contact@bridgeinvestmentpartners.net",
   },
   reseaux: {

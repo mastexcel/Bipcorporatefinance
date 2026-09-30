@@ -31,7 +31,12 @@ export default function Contact() {
               <address className="mt-4 space-y-2 text-base text-gris not-italic">
                 <p className="font-semibold text-anthracite">BIP – Bridge Investment Partners</p>
                 <p>{site.coordonnees.adresse}</p>
-                <p>Tél. : {site.coordonnees.telephone}</p>
+                <p>
+                  Tél. :{" "}
+                  <a href={site.coordonnees.telephoneLien} className="whitespace-nowrap text-anthracite underline underline-offset-2 hover:text-rouge">
+                    {site.coordonnees.telephone}
+                  </a>
+                </p>
                 <p>
                   E-mail :{" "}
                   <a href={`mailto:${site.coordonnees.email}`} className="break-all text-anthracite underline underline-offset-2 hover:text-rouge">

@@ -30,8 +30,8 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 
 - [x] Numéro **WhatsApp** : +225 05 84 37 48 48 (fourni le 30/09/2026, intégré dans `config/site.ts`).
 - [x] **E-mail** de contact et de réception des demandes : contact@bridgeinvestmentpartners.net (fourni le 30/09/2026).
-- [ ] **Téléphone** fixe ou mobile à afficher (le numéro WhatsApp peut-il servir aussi de ligne téléphonique ?).
-- [ ] **Adresse** exacte (actuellement « [À CONFIRMER : Abidjan, Riviera Faya] »).
+- [x] **Téléphone** : +225 05 84 37 48 48 (même numéro que le WhatsApp, confirmé le 30/09/2026).
+- [x] **Adresse** : Riviera Faya, Abidjan (confirmée le 30/09/2026). Préciser rue, lot ou immeuble si souhaité.
 - [ ] URL des pages **LinkedIn** et **Facebook**.
 - [ ] **Adresse du site** : choisir entre un sous-domaine du site existant (recommandé, ex.
       `corporatefinance.bridgeinvestmentpartners.net`) et un domaine dédié, puis renseigner `NEXT_PUBLIC_SITE_URL`.
