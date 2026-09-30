@@ -178,7 +178,7 @@ export function ChampTelephone({
           aria-label="Indicatif pays"
           value={indicatif}
           onChange={(e) => onIndicatif(e.target.value)}
-          className={`${classeChamp} w-28 shrink-0 border-[#b8b8bd] px-2`}
+          className={`${classeChamp.replace("w-full", "")} w-28 shrink-0 border-[#b8b8bd] px-2`}
         >
           {INDICATIFS.map((i) => (
             <option key={`${i.code}-${i.pays}`} value={i.code}>{i.code} {i.pays}</option>
@@ -192,7 +192,7 @@ export function ChampTelephone({
           value={numero}
           onChange={(e) => onNumero(e.target.value)}
           required
-          className={`${classeChamp} min-w-0 ${bordure(erreur)}`}
+          className={`${classeChamp.replace("w-full", "")} min-w-0 flex-1 ${bordure(erreur)}`}
           {...ariaChamp(id, erreur)}
         />
       </div>
