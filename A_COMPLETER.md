@@ -1,0 +1,75 @@
+# Informations et validations à fournir par BIP
+
+Chaque point indique où la modification se fait. Les emplacements visibles sur le site sont signalés par
+**[À COMPLÉTER]**, **[À CONFIRMER]** ou **[À VALIDER]**.
+
+## 1. Paramètres financiers du simulateur — `config/valuation.ts`
+
+- [ ] **Vérifier si Damodaran a publié une prime pays plus récente** (mise à jour de juillet 2026 du fichier « ctryprem »)
+      et, le cas échéant, mettre à jour **ensemble** les trois valeurs : taux sans risque (Bund 10 ans), prime de marché
+      mature et prime pays Côte d'Ivoire, avec source et date. À refaire **au moins une fois par an**.
+- [ ] Valider la **grille des multiples sectoriels** (EBE et CA, bas / central / haut) — actuellement « provisoire ».
+- [ ] Valider la **croissance à long terme** g = 3 %.
+- [ ] Valider le **taux d'impôt sur les sociétés** de 25 % avec le conseil fiscal.
+- [ ] Valider les **ajustements qualitatifs** (valeurs par défaut du cahier des charges).
+- [ ] Fournir, si souhaité, la **prime pays des autres pays de l'UEMOA** (Bénin, Burkina Faso, Guinée-Bissau, Mali, Niger,
+      Sénégal, Togo). En attendant, le simulateur applique la prime de la Côte d'Ivoire avec un avertissement.
+- [ ] Relire l'ensemble sur la page interne `/simulateur/methodologie`.
+
+Déjà validé le 30/09/2026 : taux sans risque 3,61 % (Bund 10 ans, 29/09/2026), prime de marché 4,20 % (Damodaran, 01/07/2026),
+prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (5 / 4 / 3,5 / 3 pts), décote de taille
+(−15 % / −5 % / 0 %), traitement de l'EBE négatif, règles du score de préparation.
+
+## 2. Score de préparation — `config/readiness.ts`
+
+- [ ] Valider le **libellé des 15 questions**, des options et le **nombre de points** de chaque réponse
+      (structure 5 × 20 points, seuils et règle bloquante déjà validés).
+- [ ] Relire les **actions conseillées** associées à chaque question.
+
+## 3. Coordonnées et réseaux — `config/site.ts` et variables d'environnement
+
+- [ ] Numéro **WhatsApp** (`NEXT_PUBLIC_WHATSAPP_NUMBER`) — sans lui, le bouton flottant est masqué.
+- [ ] **Téléphone** et **e-mail** de contact affichés.
+- [ ] **Adresse** exacte (actuellement « [À CONFIRMER : Abidjan, Riviera Faya] »).
+- [ ] URL des pages **LinkedIn** et **Facebook**.
+- [ ] **Nom de domaine** définitif (`NEXT_PUBLIC_SITE_URL`).
+- [ ] Adresse(s) de **réception des demandes** (`EMAIL_TO`) et adresse d'expédition (`EMAIL_FROM`).
+- [ ] Comptes et clés : **Resend**, **Cloudflare Turnstile**, **Google Analytics 4**, **Meta Pixel**.
+
+## 4. Contenus
+
+- [ ] **Chiffres clés** de la page d'accueil (3 emplacements) — `app/page.tsx`, section « Chiffres clés ».
+- [ ] **Références d'opérations** (tombstones), avec l'accord écrit des clients — `config/references.ts`.
+- [ ] **Équipe** : photo, nom, fonction, parcours, certifications et lien LinkedIn de chaque membre (dont M. ATTEMENE Zatri
+      Jean-Jacques, gérant) — `app/a-propos/page.tsx`, tableau `equipe`. Les photos vont dans `public/equipe/`.
+- [ ] **Histoire détaillée** de BIP — `app/a-propos/page.tsx`.
+- [ ] **Durées indicatives** des 10 étapes du processus — `content/methode.ts` (`DUREE_A_VALIDER`).
+- [ ] Relire les **réponses de la FAQ** et les **3 articles** de départ.
+
+## 5. Photos — `config/images.ts`
+
+Le réseau de développement ne permettait pas d'accéder à Unsplash : des visuels neutres s'affichent en attendant.
+À fournir ou à choisir (libres de droits, avec crédit) :
+
+- [ ] `accueil` — vue d'Abidjan (Plateau, quartier d'affaires)
+- [ ] `ceder` — réunion d'affaires dans un bureau
+- [ ] `investir` — Abidjan (pont, lagune Ébrié)
+- [ ] `leverDesFonds` — échange autour d'un plan d'affaires
+- [ ] `aPropos` — bureaux modernes
+
+Rappel : aucune photo de personne ne doit être présentée comme membre de l'équipe ou client.
+
+## 6. Identité visuelle
+
+- [ ] **Logo vectoriel officiel** (SVG) et **version sur fond sombre** réalisés par le graphiste, pour remplacer
+      `public/logo.png`, `public/logo-icon.png`, `app/icon.png` et `app/apple-icon.png`.
+
+## 7. Textes juridiques
+
+- [ ] **Mentions légales** — `app/mentions-legales/page.tsx` : forme juridique, capital social, RCCM, compte contribuable,
+      siège social, directeur de la publication ; confirmer l'hébergeur (Vercel).
+- [ ] **Politique de confidentialité** — `app/confidentialite/page.tsx` : date de mise à jour, forme juridique et RCCM,
+      e-mail dédié aux données personnelles, référence de la **déclaration ou autorisation ARTCI**, **durées de
+      conservation**, validation par un juriste des **transferts de données hors de Côte d'Ivoire** (Vercel, Resend,
+      Cloudflare, Google, Meta).
+- [ ] **Relecture par un avocat** de l'ensemble du site au regard de la réglementation **AMF-UMOA** et du cadre **OHADA**.
