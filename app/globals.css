@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/*
+ * Identité visuelle BIP (couleurs issues du logo).
+ * - anthracite : titres et textes
+ * - gris : textes secondaires (contraste 5,3:1 sur blanc)
+ * - rouge : boutons principaux, accents (contraste 5:1 avec le blanc)
+ * - orange : dégradés, soulignements, chiffres en grand format uniquement
+ *   (contraste 3,2:1 : jamais pour du texte courant)
+ * - orange-fonce : fin du dégradé des boutons (contraste 4,5:1 avec le blanc)
+ */
+@theme {
+  --color-anthracite: #3a3a3a;
+  --color-gris: #6b6b6b;
+  --color-rouge: #d7261e;
+  --color-rouge-fonce: #b51f18;
+  --color-orange: #f26522;
+  --color-orange-fonce: #d2461a;
+  --color-fond: #f7f7f8;
+  --color-bordure: #e4e4e7;
+
+  --font-titre: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-texte: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    background: #ffffff;
+    color: var(--color-anthracite);
+    font-family: var(--font-texte);
+    font-size: 1.0625rem; /* 17 px : au-dessus du minimum de 16 px */
+    line-height: 1.65;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-titre);
+    color: var(--color-anthracite);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-rouge);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  ::selection {
+    background: #fbd5c3;
+  }
+}
+
+@layer components {
+  /* Dégradé rouge → orange : à utiliser avec parcimonie. */
+  .degrade-bip {
+    background-image: linear-gradient(90deg, var(--color-rouge), var(--color-orange-fonce));
+  }
+  .texte-degrade {
+    background-image: linear-gradient(90deg, var(--color-rouge), var(--color-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .souligne-bip {
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  .souligne-bip::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3.5rem;
+    height: 3px;
+    background-image: linear-gradient(90deg, var(--color-rouge), var(--color-orange));
+  }
+  .centre .souligne-bip::after,
+  .souligne-bip.centre::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .a-completer {
+    display: inline-block;
+    border: 1px dashed var(--color-orange-fonce);
+    color: var(--color-rouge-fonce);
+    background: #fff7f3;
+    padding: 0 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+}
+
+/* Contenu des articles (MDX) */
+.prose-bip h2 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.prose-bip h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-bip p,
+.prose-bip ul,
+.prose-bip ol,
+.prose-bip table,
+.prose-bip blockquote {
+  margin-bottom: 1.25rem;
+}
+.prose-bip ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.prose-bip ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+.prose-bip li {
+  margin-bottom: 0.4rem;
+}
+.prose-bip a {
+  color: var(--color-rouge);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-bip strong {
+  color: var(--color-anthracite);
+  font-weight: 600;
+}
+.prose-bip blockquote {
+  border-left: 3px solid var(--color-orange);
+  background: var(--color-fond);
+  padding: 1rem 1.25rem;
+}
+.prose-bip table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  display: block;
+  overflow-x: auto;
+}
+.prose-bip th,
+.prose-bip td {
+  border-bottom: 1px solid var(--color-bordure);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-bip th {
+  font-family: var(--font-titre);
+  font-size: 0.95rem;
+}
