@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { equipe } from "@/content/equipe";
 import { images } from "@/config/images";
 import { site } from "@/config/site";
 import { AppelFinal } from "@/components/sections/AppelFinal";
-import { ACompleter } from "@/components/ui/ACompleter";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section, TitreSection } from "@/components/ui/Section";
 
@@ -39,12 +40,7 @@ const deontologie = [
   },
 ];
 
-/** Membres de l'équipe — emplacements à compléter (aucune photo tant que BIP ne les a pas fournies). */
-const equipe = [
-  { nom: site.gerant, fonction: "Gérant" },
-  { nom: null, fonction: null },
-  { nom: null, fonction: null },
-];
+
 
 export default function APropos() {
   return (
@@ -74,8 +70,11 @@ export default function APropos() {
               l&apos;Ouest méritent un conseil en fusions-acquisitions du même niveau d&apos;exigence que celui des grandes banques
               d&apos;affaires, adapté à leur taille et à leur réalité.
             </p>
-            <p className="mt-4 text-lg">
-              <ACompleter>HISTOIRE DÉTAILLÉE À COMPLÉTER</ACompleter>
+            <p className="mt-4 text-lg text-gris">
+              Depuis sa création, BIP a réalisé plus de 35 études de marché et business plans pour des PME et des startups, et
+              accompagné leurs dirigeants auprès des banques et des investisseurs. Cette connaissance de terrain des entreprises
+              ivoiriennes a conduit à la création de BIP Corporate Finance, dédiée à la valorisation, à la cession, à la
+              transmission et à l&apos;ouverture du capital des PME.
             </p>
           </div>
         </div>
@@ -94,28 +93,83 @@ export default function APropos() {
       </Section>
 
       <Section id="equipe">
-        <TitreSection surtitre="L'équipe" titre="Des associés à vos côtés" />
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {equipe.map((m, i) => (
-            <article key={i} className="rounded-lg border border-bordure p-6">
-              <div
-                role="img"
-                aria-label="Photo à venir"
-                className="flex aspect-square w-full items-center justify-center rounded-md bg-fond text-gris"
-              >
-                <svg width="64" height="64" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.2"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+        <TitreSection
+          surtitre="L'équipe"
+          titre="Un associé senior à vos côtés"
+          intro="Chaque dossier est suivi personnellement par un associé, du premier échange jusqu'au closing."
+        />
+        {equipe.map((m) => (
+          <article key={m.nom} className="grid grid-cols-1 gap-10 rounded-lg border border-bordure p-6 sm:p-8 lg:grid-cols-[18rem_1fr]">
+            <div>
+              {m.photo ? (
+                <Image src={m.photo} alt={`Portrait de ${m.nom}`} width={288} height={288} className="aspect-square w-full rounded-md object-cover" />
+              ) : (
+                <div aria-hidden="true" className="degrade-bip flex aspect-square w-full max-w-72 items-center justify-center rounded-md font-titre text-6xl font-bold text-white">
+                  {m.initiales}
+                </div>
+              )}
+              <h3 className="mt-5 text-2xl">{m.nom}</h3>
+              <p className="font-semibold text-rouge">{m.fonction}</p>
+              <p className="mt-3 text-base text-gris">Langues : {m.langues}</p>
+              {m.linkedin && (
+                <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block font-semibold text-rouge underline underline-offset-2">
+                  Profil LinkedIn
+                </a>
+              )}
+            </div>
+            <div className="space-y-8">
+              <div className="space-y-4 text-lg text-gris">
+                {m.presentation.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
               </div>
-              <h3 className="mt-5 text-xl">{m.nom ?? <ACompleter>NOM</ACompleter>}</h3>
-              <p className="font-semibold text-rouge">{m.fonction ?? <ACompleter>FONCTION</ACompleter>}</p>
-              <p className="mt-3 text-base text-gris">
-                <ACompleter>PARCOURS ET CERTIFICATIONS</ACompleter>
-              </p>
-              <p className="mt-3 text-base">
-                <ACompleter>LIEN LINKEDIN</ACompleter>
-              </p>
-            </article>
-          ))}
-        </div>
+              <div>
+                <h4 className="font-titre text-lg font-semibold">Parcours</h4>
+                <ul className="mt-4 space-y-4">
+                  {m.experiences.map((e) => (
+                    <li key={e.titre} className="border-l-2 border-orange pl-4">
+                      <p className="font-semibold text-anthracite">
+                        {e.titre} <span className="font-normal text-gris">· {e.periode}</span>
+                      </p>
+                      <p className="mt-1 text-base text-gris">{e.detail}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div>
+                  <h4 className="font-titre text-lg font-semibold">Formation et certifications</h4>
+                  <ul className="mt-3 space-y-2 text-base text-gris">
+                    {m.formation.map((f) => (
+                      <li key={f.intitule}>
+                        <span className="text-anthracite">{f.intitule}</span> — {f.etablissement}
+                        {f.annee ? ` (${f.annee})` : ""}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-titre text-lg font-semibold">Enseignement</h4>
+                  <ul className="mt-3 space-y-2 text-base text-gris">
+                    {m.enseignement.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                  {m.distinctions.length > 0 && (
+                    <>
+                      <h4 className="mt-6 font-titre text-lg font-semibold">Distinction</h4>
+                      <ul className="mt-3 space-y-2 text-base text-gris">
+                        {m.distinctions.map((d) => (
+                          <li key={d}>{d}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
       </Section>
 
       <Section alternee id="deontologie">

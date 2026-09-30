@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { chiffresCles } from "@/content/equipe";
 import { images } from "@/config/images";
 import { references } from "@/config/references";
 import { lienWhatsApp } from "@/config/site";
@@ -6,7 +7,6 @@ import { AppelFinal } from "@/components/sections/AppelFinal";
 import { CarteArticle } from "@/components/sections/CarteArticle";
 import { FriseMethode } from "@/components/sections/FriseMethode";
 import { Tombstone, TombstoneVide } from "@/components/sections/Tombstone";
-import { ACompleter } from "@/components/ui/ACompleter";
 import { LienBouton } from "@/components/ui/Button";
 import { Carte } from "@/components/ui/Carte";
 import { Container } from "@/components/ui/Container";
@@ -195,14 +195,10 @@ export default function Accueil() {
       <Section>
         <TitreSection surtitre="Chiffres clés" titre="BIP en quelques chiffres" />
         <dl className="grid gap-8 sm:grid-cols-3">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="border-l-4 border-orange pl-5">
-              <dt className="text-base text-gris">
-                <ACompleter>LIBELLÉ À COMPLÉTER</ACompleter>
-              </dt>
-              <dd className="mt-2 font-titre text-4xl font-bold">
-                <ACompleter>CHIFFRE</ACompleter>
-              </dd>
+          {chiffresCles.map((c) => (
+            <div key={c.libelle} className="flex flex-col-reverse border-l-4 border-orange pl-5">
+              <dt className="mt-2 text-base text-gris">{c.libelle}</dt>
+              <dd className="texte-degrade font-titre text-5xl font-bold">{c.valeur}</dd>
             </div>
           ))}
         </dl>

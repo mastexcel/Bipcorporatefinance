@@ -42,11 +42,12 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 
 ## 4. Contenus
 
-- [ ] **Chiffres clés** de la page d'accueil (3 emplacements) — `app/page.tsx`, section « Chiffres clés ».
+- [x] **Chiffres clés** de l'accueil : 16+ ans d'expérience, 35+ études et business plans, 9 projets immobiliers
+      financés (tirés des CV du gérant, `content/equipe.ts`). À valider et à mettre à jour au fil des missions.
 - [ ] **Références d'opérations** (tombstones), avec l'accord écrit des clients — `config/references.ts`.
-- [ ] **Équipe** : photo, nom, fonction, parcours, certifications et lien LinkedIn de chaque membre (dont M. ATTEMENE Zatri
-      Jean-Jacques, gérant) — `app/a-propos/page.tsx`, tableau `equipe`. Les photos vont dans `public/equipe/`.
-- [ ] **Histoire détaillée** de BIP — `app/a-propos/page.tsx`.
+- [x] **Profil du gérant** (M. ATTEMENE Zatri Jean-Jacques) rédigé d'après ses CV — `content/equipe.ts`.
+- [ ] **Photo** du gérant (`public/equipe/`) et **lien LinkedIn** ; profils d'autres membres éventuels.
+- [x] **Histoire de BIP** : paragraphe rédigé d'après les CV (page À propos) — à relire.
 - [x] **Durées indicatives** des 10 étapes du processus (fournies le 30/09/2026 ; durée totale 6 à 12 mois).
 - [ ] Relire les **réponses de la FAQ** et les **3 articles** de départ.
 
