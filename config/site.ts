@@ -17,8 +17,8 @@ export const site = {
   anneeCreation: 2022,
   gerant: "M. ATTEMENE Zatri Jean-Jacques",
   coordonnees: {
-    adresse: "Riviera Faya, Cocody, Abidjan",
-    quartier: "Riviera Faya, Cocody",
+    adresse: "Riviera Faya Akouédo, Cocody, Abidjan",
+    quartier: "Lot 100, îlot 101, Riviera Faya Akouédo, Cocody",
     ville: "Abidjan",
     pays: "Côte d'Ivoire",
     /** Même numéro que le WhatsApp. */
@@ -49,7 +49,7 @@ export const site = {
     rccm: "CI-ABJ-03-2022-B12-00279",
     dateImmatriculation: "27 avril 2022",
     compteContribuable: "2205980 D",
-    siege: "Lot 100, îlot 101, quartier Riviera Faya, commune de Cocody, Abidjan, Côte d'Ivoire",
+    siege: "Lot 100, îlot 101, Riviera Faya Akouédo, commune de Cocody, Abidjan, Côte d'Ivoire",
     directeurPublication: "M. ATTEMENE Zatri Jean-Jacques, gérant",
   },
   mentionConfidentialite: "Toutes les demandes sont traitées de manière strictement confidentielle.",

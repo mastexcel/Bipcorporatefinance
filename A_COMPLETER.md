@@ -31,7 +31,7 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 - [x] Numéro **WhatsApp** : +225 05 84 37 48 48 (fourni le 30/09/2026, intégré dans `config/site.ts`).
 - [x] **E-mail** de contact et de réception des demandes : contact@bridgeinvestmentpartners.net (fourni le 30/09/2026).
 - [x] **Téléphone** : +225 05 84 37 48 48 (même numéro que le WhatsApp, confirmé le 30/09/2026).
-- [x] **Adresse** : Riviera Faya, Abidjan (confirmée le 30/09/2026). Préciser rue, lot ou immeuble si souhaité.
+- [x] **Adresse** : lot 100, îlot 101, Riviera Faya Akouédo, Cocody, Abidjan (confirmée le 30/09/2026).
 - [ ] URL des pages **LinkedIn** et **Facebook**.
 - [x] **Adresse du site** : `corporatefinance.bridgeinvestmentpartners.net` (validée le 30/09/2026). À faire lors de la
       mise en ligne : ajouter le sous-domaine dans Vercel et l'enregistrement DNS `CNAME` chez le gestionnaire du domaine
@@ -74,8 +74,8 @@ Rappel : aucune photo de personne ne doit être présentée comme membre de l'é
       renseignés d'après le RCCM et la DFE fournis le 30/09/2026 (`config/site.ts`, objet `societe`).
 - [x] **Lot et îlot du siège** : lot 100, îlot 101 (confirmés par BIP le 30/09/2026).
 - [ ] **Confirmer l'hébergeur** (Vercel) une fois la mise en ligne décidée.
-- [ ] **Objet social** : la DFE déclare « Immobilier – Transport – Expertise ». Vérifier avec l'avocat que le conseil en
-      fusions-acquisitions et en évaluation est bien couvert par l'objet social et la déclaration fiscale.
+- [x] **Objet social** : BIP confirme (30/09/2026) que le conseil en fusions-acquisitions et l'évaluation d'entreprise
+      relèvent de l'activité « Expertise » déclarée.
 - [ ] **Politique de confidentialité** — `app/confidentialite/page.tsx` : date de mise à jour,
       e-mail pour les données personnelles (contact@bridgeinvestmentpartners.net par défaut, à remplacer si une adresse
       dédiée existe), référence de la **déclaration ou autorisation ARTCI**, **durées de
