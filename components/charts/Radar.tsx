@@ -14,7 +14,7 @@ export function Radar({ blocs }: { blocs: ScoreBloc[] }) {
   const polygone = (f: (i: number) => number) => blocs.map((_, i) => point(i, f(i)).join(",")).join(" ");
 
   return (
-    <svg viewBox={`-60 -10 ${taille + 120} ${taille + 20}`} className="h-auto w-full max-w-md" role="img" aria-label={`Score par bloc : ${blocs.map((b) => `${b.libelle} ${b.points} sur ${b.pointsMax}`).join(", ")}`}>
+    <svg viewBox={`-95 -10 ${taille + 190} ${taille + 20}`} className="h-auto w-full max-w-md" role="img" aria-label={`Score par bloc : ${blocs.map((b) => `${b.libelle} ${b.points} sur ${b.pointsMax}`).join(", ")}`}>
       {/* Grille recessive */}
       {[0.25, 0.5, 0.75, 1].map((k) => (
         <polygon key={k} points={polygone(() => rayon * k)} fill="none" stroke="#e4e4e7" strokeWidth="1" />

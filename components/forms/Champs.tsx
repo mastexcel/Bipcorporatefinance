@@ -178,7 +178,7 @@ export function ChampTelephone({
           aria-label="Indicatif pays"
           value={indicatif}
           onChange={(e) => onIndicatif(e.target.value)}
-          className={`${classeChamp.replace("w-full", "")} w-28 shrink-0 border-[#b8b8bd] px-2`}
+          className={`${classeChamp.replace("w-full", "")} w-28 shrink-0 border-[#b8b8bd] px-2 sm:w-48`}
         >
           {INDICATIFS.map((i) => (
             <option key={`${i.code}-${i.pays}`} value={i.code}>{i.code} {i.pays}</option>
