@@ -51,9 +51,11 @@ export function Entete() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link href="/simulateur" className={classesBouton("principal", "hidden px-4 sm:inline-flex")}>
-            Estimer mon entreprise
-          </Link>
+          <span className="hidden sm:block">
+            <Link href="/simulateur" className={classesBouton("principal", "px-4")}>
+              Estimer mon entreprise
+            </Link>
+          </span>
           <button
             type="button"
             className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-bordure xl:hidden"
