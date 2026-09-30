@@ -70,9 +70,13 @@ Rappel : aucune photo de personne ne doit être présentée comme membre de l'é
 
 ## 7. Textes juridiques
 
-- [ ] **Mentions légales** — `app/mentions-legales/page.tsx` : forme juridique, capital social, RCCM, compte contribuable,
-      siège social, directeur de la publication ; confirmer l'hébergeur (Vercel).
-- [ ] **Politique de confidentialité** — `app/confidentialite/page.tsx` : date de mise à jour, forme juridique et RCCM,
+- [x] **Mentions légales** : forme juridique, capital, RCCM, compte contribuable, siège et directeur de la publication
+      renseignés d'après le RCCM et la DFE fournis le 30/09/2026 (`config/site.ts`, objet `societe`).
+- [ ] **Confirmer le lot et l'îlot du siège** (lot 100, îlot 101 : lus sur la DFE manuscrite).
+- [ ] **Confirmer l'hébergeur** (Vercel) une fois la mise en ligne décidée.
+- [ ] **Objet social** : la DFE déclare « Immobilier – Transport – Expertise ». Vérifier avec l'avocat que le conseil en
+      fusions-acquisitions et en évaluation est bien couvert par l'objet social et la déclaration fiscale.
+- [ ] **Politique de confidentialité** — `app/confidentialite/page.tsx` : date de mise à jour,
       e-mail pour les données personnelles (contact@bridgeinvestmentpartners.net par défaut, à remplacer si une adresse
       dédiée existe), référence de la **déclaration ou autorisation ARTCI**, **durées de
       conservation**, validation par un juriste des **transferts de données hors de Côte d'Ivoire** (Vercel, Resend,

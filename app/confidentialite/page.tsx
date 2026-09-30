@@ -34,7 +34,8 @@ export default function Confidentialite() {
 
       <Bloc titre="1. Responsable du traitement">
         <p>
-          Bridge Investment Partners (BIP), <ACompleter>FORME JURIDIQUE, RCCM</ACompleter>, dont le siège est situé {site.coordonnees.adresse}.
+          {site.societe.denomination}, SARL au capital de {site.societe.capital}, immatriculée au RCCM d&apos;Abidjan sous le
+          numéro {site.societe.rccm}, dont le siège est situé {site.societe.siege}.
         </p>
         <p>
           Contact pour toute question relative à vos données :{" "}

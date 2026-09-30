@@ -16,8 +16,8 @@ export const site = {
   anneeCreation: 2022,
   gerant: "M. ATTEMENE Zatri Jean-Jacques",
   coordonnees: {
-    adresse: "Riviera Faya, Abidjan",
-    quartier: "Riviera Faya",
+    adresse: "Riviera Faya, Cocody, Abidjan",
+    quartier: "Riviera Faya, Cocody",
     ville: "Abidjan",
     pays: "Côte d'Ivoire",
     /** Même numéro que le WhatsApp. */
@@ -39,6 +39,17 @@ export const site = {
     affichage: "+225 05 84 37 48 48",
     message:
       "Bonjour BIP, je souhaite échanger en toute confidentialité sur un projet concernant mon entreprise.",
+  },
+  /** Informations légales (RCCM et déclaration fiscale d'existence). */
+  societe: {
+    denomination: "Bridge Investment Partners (BIP)",
+    formeJuridique: "Société à responsabilité limitée (SARL)",
+    capital: "3 000 000 FCFA",
+    rccm: "CI-ABJ-03-2022-B12-00279",
+    dateImmatriculation: "27 avril 2022",
+    compteContribuable: "2205980 D",
+    siege: "Lot 100, îlot 101, quartier Riviera Faya, commune de Cocody, Abidjan, Côte d'Ivoire",
+    directeurPublication: "M. ATTEMENE Zatri Jean-Jacques, gérant",
   },
   mentionConfidentialite: "Toutes les demandes sont traitées de manière strictement confidentielle.",
 };

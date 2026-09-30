@@ -10,16 +10,16 @@ export const metadata: Metadata = {
 };
 
 const lignes: [string, React.ReactNode][] = [
-  ["Dénomination sociale", "Bridge Investment Partners (BIP)"],
-  ["Forme juridique", <ACompleter key="f" />],
-  ["Capital social", <ACompleter key="c" />],
-  ["RCCM", <ACompleter key="r" />],
-  ["Compte contribuable", <ACompleter key="cc" />],
-  ["Siège social", <ACompleter key="s">À COMPLÉTER : adresse complète</ACompleter>],
+  ["Dénomination sociale", site.societe.denomination],
+  ["Forme juridique", site.societe.formeJuridique],
+  ["Capital social", site.societe.capital],
+  ["RCCM", `${site.societe.rccm} (Tribunal de commerce d'Abidjan, immatriculation du ${site.societe.dateImmatriculation})`],
+  ["Compte contribuable", site.societe.compteContribuable],
+  ["Siège social", site.societe.siege],
   ["Téléphone", site.coordonnees.telephone],
   ["E-mail", site.coordonnees.email],
   ["WhatsApp", site.whatsapp.affichage],
-  ["Directeur de la publication", <ACompleter key="d" />],
+  ["Directeur de la publication", site.societe.directeurPublication],
   ["Hébergeur", <span key="h">Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis — <ACompleter>À CONFIRMER</ACompleter></span>],
 ];
 
