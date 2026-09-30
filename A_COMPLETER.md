@@ -47,9 +47,8 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 - [ ] **Références d'opérations** (tombstones), avec l'accord écrit des clients — `config/references.ts`.
       En attendant, l'accueil et la page Références affichent les **missions de conseil** du groupe et la liste des
       **partenaires** tirées de la présentation institutionnelle (`content/groupe.ts`).
-- [ ] Confirmer que les **clients et partenaires cités** (GIZ, UE, BAD, BIT, Solidaridad, GESTOCI, IPS-CNAM, McRays,
-      AF-CHEM SOFACO…) acceptent d'être nommés sur le site.
-- [ ] **Intitulé exact du MBA** : « Banque et Finance » (CV) ou « Corporate Finance » (présentation) ?
+- [x] Les **clients et partenaires cités** acceptent d'être nommés sur le site (confirmé par BIP le 30/09/2026).
+- [x] **MBA** : Banque et Finance, option corporate finance, CESAG Business School ; **16 ans** d'expérience (confirmés).
 - [x] **Profil du gérant** (M. ATTEMENE Zatri Jean-Jacques) rédigé d'après ses CV — `content/equipe.ts`.
 - [ ] **Photo** du directeur général en fichier original (`public/equipe/`), **lien LinkedIn**, profils d'autres membres
       éventuels, et **photos terrain** originales (avec l'accord des personnes photographiées).

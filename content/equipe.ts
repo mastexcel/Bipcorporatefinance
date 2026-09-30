@@ -28,7 +28,7 @@ export const equipe: MembreEquipe[] = [
     photo: null,
     initiales: "JJA",
     presentation: [
-      "Titulaire d'un MBA Banque et Finance du CESAG (Dakar), Jean-Jacques ATTEMENE ZATRI cumule plus de 16 ans d'expérience en finance d'entreprise, analyse financière et accompagnement de PME en Afrique de l'Ouest.",
+      "Titulaire d'un MBA Banque et Finance, option corporate finance, du CESAG Business School (Dakar), Jean-Jacques ATTEMENE ZATRI cumule plus de 16 ans d'expérience en finance d'entreprise, analyse financière et accompagnement de PME en Afrique de l'Ouest.",
       "Co-fondateur et directeur général de Bridge Investment Partners (conseil, transport, immobilier), il a conduit plus de 35 études de marché et business plans pour des PME et des startups (commerce, logistique, services, industrie, immobilier), dont 9 projets immobiliers menés jusqu'au financement. Il accompagne les dirigeants dans leur stratégie, leur structuration financière et leurs levées de fonds auprès d'institutions financières et d'investisseurs privés.",
     ],
     experiences: [
@@ -66,7 +66,7 @@ export const equipe: MembreEquipe[] = [
       "Fiscalité — Université Méthodiste de Côte d'Ivoire",
     ],
     formation: [
-      { intitule: "MBA Banque et Finance", etablissement: "CESAG Business School, Dakar", annee: "2014" },
+      { intitule: "MBA Banque et Finance, option corporate finance", etablissement: "CESAG Business School, Dakar", annee: "2014" },
       { intitule: "Certificat en gestion comptable et financière", etablissement: "COLEAD" },
       { intitule: "Certificat en gestion de projet", etablissement: "Chaire UNESCO, Université Alassane Ouattara" },
       { intitule: "Formateur certifié en création d'entreprise (GERME)", etablissement: "Bureau international du Travail" },
