@@ -8,7 +8,8 @@ export const A_COMPLETER = "[À COMPLÉTER]";
 export const site = {
   nom: "BIP Corporate Finance",
   nomComplet: "BIP Corporate Finance — Bridge Investment Partners",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
+  /** Adresse officielle validée par BIP le 30/09/2026 (NEXT_PUBLIC_SITE_URL la remplace si elle est définie). */
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://corporatefinance.bridgeinvestmentpartners.net").replace(/\/$/, ""),
   description:
     "Conseil indépendant en fusions-acquisitions pour les PME et ETI en Côte d'Ivoire et dans l'UEMOA : valorisation, cession, transmission, levée de fonds.",
   promesse:

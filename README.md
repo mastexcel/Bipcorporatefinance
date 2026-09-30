@@ -89,7 +89,7 @@ Le **score de préparation** se règle dans `config/readiness.ts` (chaque bloc d
 2. Créez une clé API.
 3. Renseignez dans `.env.local` (et dans Vercel, § 7) :
    - `RESEND_API_KEY` : la clé ;
-   - `EMAIL_FROM` : l'expéditeur, sur le domaine vérifié (ex. `BIP Corporate Finance <contact@votre-domaine.com>`) ;
+   - `EMAIL_FROM` : l'expéditeur, sur le domaine vérifié (`BIP Corporate Finance <contact@bridgeinvestmentpartners.net>`) ;
    - `EMAIL_TO` : la ou les adresses de réception des demandes, séparées par des virgules
      (`contact@bridgeinvestmentpartners.net`).
 
@@ -137,12 +137,12 @@ Si le client ne souhaite pas être nommé, laissez `client: null` : la descripti
 1. Poussez le dépôt sur GitHub, puis sur [vercel.com](https://vercel.com) : **Add New → Project**, importez le dépôt
    (framework détecté automatiquement : Next.js).
 2. Dans **Settings → Environment Variables**, ajoutez toutes les variables de `.env.example` (environnement *Production*),
-   dont `NEXT_PUBLIC_SITE_URL` = l'URL définitive (ex. `https://www.bip-corporatefinance.com`).
+   dont `NEXT_PUBLIC_SITE_URL` = `https://corporatefinance.bridgeinvestmentpartners.net`.
 3. Déployez. Les en-têtes de sécurité (CSP, HSTS, X-Frame-Options…) sont définis dans `next.config.ts` ; Vercel force le HTTPS.
 
 ## 8. Brancher le nom de domaine
 
-### Option recommandée : un sous-domaine du site existant de BIP
+### Option retenue par BIP (30/09/2026) : `corporatefinance.bridgeinvestmentpartners.net`
 
 Le site de BIP Corporate Finance peut être publié **sous le domaine existant `bridgeinvestmentpartners.net`**, sans
 acheter de nouveau domaine et sans toucher au site actuel, via un sous-domaine, par exemple
@@ -157,7 +157,7 @@ acheter de nouveau domaine et sans toucher au site actuel, via un sous-domaine, 
 Autre possibilité : servir le site sous un chemin du site actuel (`bridgeinvestmentpartners.net/corporate-finance`).
 C'est plus contraignant : il faut une règle de réécriture sur l'hébergeur du site actuel et l'option `basePath` de Next.js.
 
-### Avec un domaine dédié
+### Pour mémoire : avec un domaine dédié
 
 1. Vercel → projet → **Settings → Domains** → ajoutez `votre-domaine.com` et `www.votre-domaine.com`.
 2. Chez votre registrar, créez les enregistrements DNS indiqués par Vercel (généralement un `A` vers l'IP Vercel pour le

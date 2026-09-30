@@ -33,9 +33,9 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 - [x] **Téléphone** : +225 05 84 37 48 48 (même numéro que le WhatsApp, confirmé le 30/09/2026).
 - [x] **Adresse** : Riviera Faya, Abidjan (confirmée le 30/09/2026). Préciser rue, lot ou immeuble si souhaité.
 - [ ] URL des pages **LinkedIn** et **Facebook**.
-- [ ] **Adresse du site** : choisir entre un sous-domaine du site existant (recommandé, ex.
-      `corporatefinance.bridgeinvestmentpartners.net`) et un domaine dédié, puis renseigner `NEXT_PUBLIC_SITE_URL`.
-      Voir README § 8.
+- [x] **Adresse du site** : `corporatefinance.bridgeinvestmentpartners.net` (validée le 30/09/2026). À faire lors de la
+      mise en ligne : ajouter le sous-domaine dans Vercel et l'enregistrement DNS `CNAME` chez le gestionnaire du domaine
+      (README § 8), puis un lien « Corporate Finance » sur le site actuel de BIP.
 - [ ] Vérifier le domaine **bridgeinvestmentpartners.net** dans Resend pour pouvoir envoyer depuis
       contact@bridgeinvestmentpartners.net (`EMAIL_FROM`).
 - [ ] Comptes et clés : **Resend**, **Cloudflare Turnstile**, **Google Analytics 4**, **Meta Pixel**.
