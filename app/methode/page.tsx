@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { images } from "@/config/images";
 import { DUREE_TOTALE, etapesProcessus, faqMethode, MENTION_DUREES } from "@/content/methode";
 import { AppelFinal } from "@/components/sections/AppelFinal";
 import { Faq } from "@/components/ui/Faq";
@@ -27,6 +28,7 @@ export default function Methode() {
   return (
     <>
       <PageHero
+        image={images.methode}
         surtitre="Notre méthode"
         titre="Un processus de cession structuré, étape par étape"
         intro="Le standard des banques d'affaires, adapté aux PME : chaque étape a un objectif précis, et vous savez à tout moment ce qui se passe et ce que nous attendons de vous."

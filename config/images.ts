@@ -17,7 +17,7 @@ export interface EmplacementImage {
 }
 
 export const images: Record<
-  "accueil" | "ceder" | "investir" | "leverDesFonds" | "aPropos",
+  "accueil" | "ceder" | "investir" | "leverDesFonds" | "aPropos" | "contact" | "methode" | "references" | "analyses",
   EmplacementImage
 > = {
   accueil: {
@@ -43,6 +43,26 @@ export const images: Record<
   aPropos: {
     src: "/images/a-propos-groupe.webp",
     alt: "Participants et intervenants du Japan Innovation Tour 2026 organisé par Bridge Investment Partners",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
+  contact: {
+    src: "/images/contact-directeur.webp",
+    alt: "Jean-Jacques ATTEMENE ZATRI, directeur général de BIP, au Japan Innovation Tour 2026",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
+  methode: {
+    src: "/images/methode-intervention.webp",
+    alt: "Jean-Jacques ATTEMENE ZATRI présentant son approche lors d'un panel du Japan Innovation Tour 2026",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
+  references: {
+    src: "/images/references-echange.webp",
+    alt: "Échange entre participants au Japan Innovation Tour 2026 organisé par BIP",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
+  analyses: {
+    src: "/images/analyses-conference.webp",
+    alt: "Intervention lors d'une conférence organisée par BIP à Abidjan",
     credit: "BIP – Japan Innovation Tour 2026",
   },
 };

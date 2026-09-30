@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { images } from "@/config/images";
 import { references } from "@/config/references";
 import { AppelFinal } from "@/components/sections/AppelFinal";
 import { GrilleReferences } from "@/components/sections/GrilleReferences";
@@ -17,6 +18,7 @@ export default function References() {
   return (
     <>
       <PageHero
+        image={images.references}
         surtitre="Références"
         titre="Nos références"
         intro="Les opérations de cession, d'acquisition et de levée de fonds sont présentées avec l'accord de nos clients ; lorsqu'un client préfère ne pas être nommé, seuls le secteur et le type d'opération sont indiqués."

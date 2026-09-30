@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { images } from "@/config/images";
 import { lienWhatsApp, site } from "@/config/site";
 import { FormulaireContact } from "@/components/forms/FormulaireContact";
 import { PageHero } from "@/components/ui/PageHero";
@@ -15,6 +16,7 @@ export default function Contact() {
   return (
     <>
       <PageHero
+        image={images.contact}
         surtitre="Contact"
         titre="Parlons de votre projet"
         intro="Un premier échange confidentiel et sans engagement avec un associé BIP. Nous vous répondons rapidement."

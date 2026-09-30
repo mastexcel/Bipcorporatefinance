@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { images } from "@/config/images";
 import { CarteArticle } from "@/components/sections/CarteArticle";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
@@ -16,6 +17,7 @@ export default function Analyses() {
   return (
     <>
       <PageHero
+        image={images.analyses}
         surtitre="Analyses"
         titre="Comprendre la valeur de votre entreprise"
         intro="Des analyses pédagogiques pour les dirigeants qui préparent une cession, une transmission ou une ouverture de capital. Prochainement : le baromètre des PME ivoiriennes."
