@@ -161,3 +161,8 @@
   font-family: var(--font-titre);
   font-size: 0.95rem;
 }
+
+/* Bandeau cookies masqué d'emblée si le visiteur a déjà fait son choix. */
+html[data-consentement] .bandeau-cookies {
+  display: none;
+}

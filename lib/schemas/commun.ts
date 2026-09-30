@@ -4,8 +4,9 @@
  */
 import { z } from "zod";
 
-// Messages d'erreur par défaut de Zod en français.
-z.config(z.locales.fr());
+// Messages d'erreur par défaut de Zod en français ; « jitless » : Zod n'utilise
+// pas `new Function`, interdit par la Content-Security-Policy.
+z.config({ ...z.locales.fr(), jitless: true });
 
 export const INDICATIFS = [
   { code: "+225", pays: "Côte d'Ivoire" },

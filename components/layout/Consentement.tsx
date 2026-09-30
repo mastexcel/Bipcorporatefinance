@@ -1,5 +1,6 @@
 "use client";
 
+import { ATTRIBUT, CLE_CONSENTEMENT } from "@/lib/consentement";
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 
 /**
@@ -8,7 +9,7 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
  * n'est chargé avant un consentement explicite.
  */
 type Choix = "accepte" | "refuse";
-const CLE = "bip-consentement-v1";
+const CLE = CLE_CONSENTEMENT;
 
 interface ContexteConsentement {
   choix: Choix | null;
@@ -24,7 +25,11 @@ const Ctx = createContext<ContexteConsentement | null>(null);
 export function ConsentementProvider({ children }: { children: ReactNode }) {
   const [choix, setChoix] = useState<Choix | null>(null);
   const [chargement, setChargement] = useState(true);
-  const [bandeauOuvert, setBandeauOuvert] = useState(false);
+  // Ouvert par défaut : le bandeau fait partie du HTML initial (affichage immédiat,
+  // sans attendre le JavaScript). Pour un visiteur ayant déjà choisi, il est
+  // masqué avant affichage par le script de app/layout.tsx (attribut
+  // data-consentement sur <html>), puis fermé ici.
+  const [bandeauOuvert, setBandeauOuvert] = useState(true);
 
   useEffect(() => {
     let lu: string | null = null;
@@ -33,8 +38,10 @@ export function ConsentementProvider({ children }: { children: ReactNode }) {
     } catch {
       // Stockage indisponible (navigation privée) : on redemandera.
     }
-    if (lu === "accepte" || lu === "refuse") setChoix(lu);
-    else setBandeauOuvert(true);
+    if (lu === "accepte" || lu === "refuse") {
+      setChoix(lu);
+      setBandeauOuvert(false);
+    }
     setChargement(false);
   }, []);
 
@@ -42,6 +49,7 @@ export function ConsentementProvider({ children }: { children: ReactNode }) {
     const retrait = choix === "accepte" && c === "refuse";
     setChoix(c);
     setBandeauOuvert(false);
+    document.documentElement.setAttribute(ATTRIBUT, c);
     try {
       window.localStorage.setItem(CLE, c);
     } catch {
@@ -51,7 +59,10 @@ export function ConsentementProvider({ children }: { children: ReactNode }) {
     if (retrait) window.location.reload();
   }, [choix]);
 
-  const rouvrir = useCallback(() => setBandeauOuvert(true), []);
+  const rouvrir = useCallback(() => {
+    document.documentElement.removeAttribute(ATTRIBUT);
+    setBandeauOuvert(true);
+  }, []);
 
   return <Ctx.Provider value={{ choix, chargement, bandeauOuvert, enregistrer, rouvrir }}>{children}</Ctx.Provider>;
 }

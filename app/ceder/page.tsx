@@ -71,7 +71,7 @@ export default function Ceder() {
         <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {facteursValeur.map((f, i) => (
             <div key={f.titre} className="flex gap-4">
-              <span className="font-titre text-3xl font-bold text-orange" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-titre text-3xl font-bold text-orange-fonce" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <h3 className="text-lg">{f.titre}</h3>
                 <p className="mt-1 text-base text-gris">{f.texte}</p>

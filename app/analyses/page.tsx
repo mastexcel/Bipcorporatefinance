@@ -21,6 +21,7 @@ export default function Analyses() {
         intro="Des analyses pédagogiques pour les dirigeants qui préparent une cession, une transmission ou une ouverture de capital. Prochainement : le baromètre des PME ivoiriennes."
       />
       <Section>
+        <h2 className="sr-only">Tous les articles</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {articles.map((a) => (
             <CarteArticle key={a.slug} article={a} />

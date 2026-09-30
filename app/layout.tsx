@@ -5,6 +5,7 @@ import { Analytics } from "@/components/layout/Analytics";
 import { BandeauCookies } from "@/components/layout/BandeauCookies";
 import { BoutonWhatsApp } from "@/components/layout/BoutonWhatsApp";
 import { ConsentementProvider } from "@/components/layout/Consentement";
+import { ATTRIBUT, CLE_CONSENTEMENT } from "@/lib/consentement";
 import { Entete } from "@/components/layout/Entete";
 import { PiedDePage } from "@/components/layout/PiedDePage";
 import { motsCles, site } from "@/config/site";
@@ -40,7 +41,15 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${montserrat.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Lit le choix cookies avant l'affichage pour ne pas faire clignoter le bandeau. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var c=localStorage.getItem(${JSON.stringify(CLE_CONSENTEMENT)});if(c==="accepte"||c==="refuse")document.documentElement.setAttribute(${JSON.stringify(ATTRIBUT)},c)}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <ConsentementProvider>
           <Entete />

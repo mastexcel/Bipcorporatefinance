@@ -12,7 +12,7 @@ export function BandeauCookies() {
       role="dialog"
       aria-modal="false"
       aria-labelledby="cookies-titre"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-bordure bg-white p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] sm:p-5"
+      className="bandeau-cookies fixed inset-x-0 bottom-0 z-50 border-t border-bordure bg-white p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] sm:p-5"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="text-base">
