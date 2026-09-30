@@ -24,12 +24,12 @@ export interface MembreEquipe {
 export const equipe: MembreEquipe[] = [
   {
     nom: "Jean-Jacques ATTEMENE ZATRI",
-    fonction: "Gérant — Associé senior",
+    fonction: "Directeur général et co-fondateur",
     photo: null,
     initiales: "JJA",
     presentation: [
       "Titulaire d'un MBA Banque et Finance du CESAG (Dakar), Jean-Jacques ATTEMENE ZATRI cumule plus de 16 ans d'expérience en finance d'entreprise, analyse financière et accompagnement de PME en Afrique de l'Ouest.",
-      "Gérant de Bridge Investment Partners depuis 2022, il a conduit plus de 35 études de marché et business plans pour des PME et des startups (commerce, logistique, services, industrie, immobilier), dont 9 projets immobiliers menés jusqu'au financement. Il accompagne les dirigeants dans leur stratégie, leur structuration financière et leurs levées de fonds auprès d'institutions financières et d'investisseurs privés.",
+      "Co-fondateur et directeur général de Bridge Investment Partners (conseil, transport, immobilier), il a conduit plus de 35 études de marché et business plans pour des PME et des startups (commerce, logistique, services, industrie, immobilier), dont 9 projets immobiliers menés jusqu'au financement. Il accompagne les dirigeants dans leur stratégie, leur structuration financière et leurs levées de fonds auprès d'institutions financières et d'investisseurs privés.",
     ],
     experiences: [
       {

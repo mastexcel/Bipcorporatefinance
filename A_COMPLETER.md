@@ -45,8 +45,14 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 - [x] **Chiffres clés** de l'accueil : 16+ ans d'expérience, 35+ études et business plans, 9 projets immobiliers
       financés (tirés des CV du gérant, `content/equipe.ts`). À valider et à mettre à jour au fil des missions.
 - [ ] **Références d'opérations** (tombstones), avec l'accord écrit des clients — `config/references.ts`.
+      En attendant, l'accueil et la page Références affichent les **missions de conseil** du groupe et la liste des
+      **partenaires** tirées de la présentation institutionnelle (`content/groupe.ts`).
+- [ ] Confirmer que les **clients et partenaires cités** (GIZ, UE, BAD, BIT, Solidaridad, GESTOCI, IPS-CNAM, McRays,
+      AF-CHEM SOFACO…) acceptent d'être nommés sur le site.
+- [ ] **Intitulé exact du MBA** : « Banque et Finance » (CV) ou « Corporate Finance » (présentation) ?
 - [x] **Profil du gérant** (M. ATTEMENE Zatri Jean-Jacques) rédigé d'après ses CV — `content/equipe.ts`.
-- [ ] **Photo** du gérant (`public/equipe/`) et **lien LinkedIn** ; profils d'autres membres éventuels.
+- [ ] **Photo** du directeur général en fichier original (`public/equipe/`), **lien LinkedIn**, profils d'autres membres
+      éventuels, et **photos terrain** originales (avec l'accord des personnes photographiées).
 - [x] **Histoire de BIP** : paragraphe rédigé d'après les CV (page À propos) — à relire.
 - [x] **Durées indicatives** des 10 étapes du processus (fournies le 30/09/2026 ; durée totale 6 à 12 mois).
 - [ ] Relire les **réponses de la FAQ** et les **3 articles** de départ.

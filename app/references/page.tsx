@@ -3,11 +3,13 @@ import { references } from "@/config/references";
 import { AppelFinal } from "@/components/sections/AppelFinal";
 import { GrilleReferences } from "@/components/sections/GrilleReferences";
 import { PageHero } from "@/components/ui/PageHero";
-import { Section } from "@/components/ui/Section";
+import { GrilleMissions, ListePartenaires } from "@/components/sections/Missions";
+import { Section, TitreSection } from "@/components/ui/Section";
+import { missionsReference } from "@/content/groupe";
 
 export const metadata: Metadata = {
-  title: "Références : opérations de fusion-acquisition accompagnées",
-  description: "Cessions, acquisitions, levées de fonds et évaluations accompagnées par BIP Corporate Finance en Côte d'Ivoire et dans l'UEMOA.",
+  title: "Références : missions et partenaires",
+  description: "Missions de conseil financier et stratégique du groupe BIP et partenaires : BAD, GIZ, Union européenne, BIT, Solidaridad, COLEAD et entreprises ivoiriennes.",
   alternates: { canonical: "/references" },
 };
 
@@ -16,12 +18,26 @@ export default function References() {
     <>
       <PageHero
         surtitre="Références"
-        titre="Opérations accompagnées"
-        intro="Chaque opération est présentée avec l'accord de nos clients. Lorsqu'un client préfère ne pas être nommé, seuls le secteur et le type d'opération sont indiqués."
+        titre="Nos références"
+        intro="Les opérations de cession, d'acquisition et de levée de fonds sont présentées avec l'accord de nos clients ; lorsqu'un client préfère ne pas être nommé, seuls le secteur et le type d'opération sont indiqués."
       />
-      <Section>
-        <GrilleReferences references={references} />
-        <p className="mt-8 text-base text-gris italic">Opérations présentées avec l&apos;accord de nos clients.</p>
+      {references.length > 0 && (
+        <Section>
+          <GrilleReferences references={references} />
+          <p className="mt-8 text-base text-gris italic">Opérations présentées avec l&apos;accord de nos clients.</p>
+        </Section>
+      )}
+      <Section alternee={references.length > 0}>
+        <TitreSection
+          surtitre="Missions de référence"
+          titre="Ce que le groupe BIP a livré"
+          intro="Missions de conseil réalisées par BIP Expertise, le pôle conseil du groupe : notation financière, business plans, études de rentabilité, tableaux de bord et formation."
+        />
+        <GrilleMissions missions={missionsReference} />
+      </Section>
+      <Section alternee={references.length === 0}>
+        <TitreSection surtitre="Ils nous ont fait confiance" titre="Partenaires, bailleurs et clients" />
+        <ListePartenaires />
       </Section>
       <AppelFinal />
     </>

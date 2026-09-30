@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { equipe } from "@/content/equipe";
+import { marques, reseauExperts } from "@/content/groupe";
 import { images } from "@/config/images";
 import { site } from "@/config/site";
 import { AppelFinal } from "@/components/sections/AppelFinal";
@@ -76,6 +77,47 @@ export default function APropos() {
               ivoiriennes a conduit à la création de BIP Corporate Finance, dédiée à la valorisation, à la cession, à la
               transmission et à l&apos;ouverture du capital des PME.
             </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section alternee>
+        <TitreSection
+          surtitre="Le groupe BIP"
+          titre="Une société ivoirienne, trois métiers"
+          intro="Bridge Investment Partners réunit trois marques sous un même siège à Riviera Faya. BIP Corporate Finance s'appuie sur le pôle conseil, BIP Expertise."
+        />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {marques.map((m) => (
+            <div key={m.nom} className="rounded-lg border border-bordure bg-white p-6">
+              <p className="text-sm font-semibold tracking-widest text-rouge uppercase">{m.pole}</p>
+              <h3 className="mt-2 text-xl">{m.nom}</h3>
+              <p className="mt-2 text-base text-gris">{m.description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[16rem_1fr]">
+          <div className="text-center lg:text-left">
+            <p className="texte-degrade font-titre text-7xl font-bold">{reseauExperts.total}</p>
+            <p className="mt-2 font-titre text-xl font-semibold">{reseauExperts.libelle}</p>
+          </div>
+          <div>
+            <h2 className="souligne-bip text-3xl">Une équipe pluridisciplinaire</h2>
+            <p className="mt-6 text-lg text-gris">{reseauExperts.profils}</p>
+            <table className="mt-6 w-full max-w-lg text-left text-base">
+              <caption className="sr-only">Répartition des experts par domaine</caption>
+              <tbody>
+                {reseauExperts.domaines.map((d) => (
+                  <tr key={d.domaine} className="border-b border-bordure">
+                    <th scope="row" className="py-2 pr-4 font-normal text-anthracite">{d.domaine}</th>
+                    <td className="py-2 text-right font-semibold tabular-nums">{d.nombre}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </Section>

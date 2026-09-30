@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { chiffresCles } from "@/content/equipe";
+import { missionsReference } from "@/content/groupe";
 import { images } from "@/config/images";
 import { references } from "@/config/references";
 import { lienWhatsApp } from "@/config/site";
 import { AppelFinal } from "@/components/sections/AppelFinal";
 import { CarteArticle } from "@/components/sections/CarteArticle";
 import { FriseMethode } from "@/components/sections/FriseMethode";
-import { Tombstone, TombstoneVide } from "@/components/sections/Tombstone";
+import { GrilleMissions } from "@/components/sections/Missions";
+import { Tombstone } from "@/components/sections/Tombstone";
 import { LienBouton } from "@/components/ui/Button";
 import { Carte } from "@/components/ui/Carte";
 import { Container } from "@/components/ui/Container";
@@ -177,13 +179,26 @@ export default function Accueil() {
 
       {/* Références */}
       <Section alternee>
-        <TitreSection surtitre="Références" titre="Opérations accompagnées" />
-        <div className="grid gap-6 md:grid-cols-3">
-          {tombstones.length > 0
-            ? tombstones.map((r) => <Tombstone key={r.id} reference={r} />)
-            : [1, 2, 3].map((i) => <TombstoneVide key={i} />)}
-        </div>
-        <p className="mt-6 text-base text-gris italic">Opérations présentées avec l&apos;accord de nos clients.</p>
+        {tombstones.length > 0 ? (
+          <>
+            <TitreSection surtitre="Références" titre="Opérations accompagnées" />
+            <div className="grid gap-6 md:grid-cols-3">
+              {tombstones.map((r) => (
+                <Tombstone key={r.id} reference={r} />
+              ))}
+            </div>
+            <p className="mt-6 text-base text-gris italic">Opérations présentées avec l&apos;accord de nos clients.</p>
+          </>
+        ) : (
+          <>
+            <TitreSection
+              surtitre="Références"
+              titre="Ils nous ont confié leurs enjeux financiers"
+              intro="Quelques missions de conseil réalisées par le groupe BIP pour des institutions et des entreprises."
+            />
+            <GrilleMissions missions={missionsReference.filter((m) => m.finance)} />
+          </>
+        )}
         <div className="mt-6">
           <Link href="/references" className="font-semibold text-rouge hover:text-rouge-fonce">
             Toutes nos références <span aria-hidden="true">→</span>
