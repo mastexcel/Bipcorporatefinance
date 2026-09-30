@@ -180,7 +180,7 @@ Des visuels neutres aux couleurs de BIP s'affichent à la place. Pour ajouter un
 
 Règle BIP : aucune photo de personne ne doit être présentée comme membre de l'équipe ou client.
 
-**Crédits photos** : aucun pour l'instant.
+**Crédits photos** : photos du Japan Innovation Tour 2026, propriété de Bridge Investment Partners.
 
 ## 10. Identité visuelle
 

@@ -20,9 +20,29 @@ export const images: Record<
   "accueil" | "ceder" | "investir" | "leverDesFonds" | "aPropos",
   EmplacementImage
 > = {
-  accueil: { src: null, alt: "Vue du Plateau, quartier d'affaires d'Abidjan", credit: null },
-  ceder: { src: null, alt: "Réunion d'affaires dans un bureau à Abidjan", credit: null },
-  investir: { src: null, alt: "Pont et lagune Ébrié à Abidjan", credit: null },
-  leverDesFonds: { src: null, alt: "Échange autour d'un plan d'affaires", credit: null },
-  aPropos: { src: null, alt: "Bureaux modernes à Abidjan", credit: null },
+  accueil: {
+    src: "/images/accueil-intervention.webp",
+    alt: "Jean-Jacques ATTEMENE ZATRI, directeur général de BIP, intervenant lors du Japan Innovation Tour 2026 à Abidjan",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
+  ceder: {
+    src: "/images/ceder-echange.webp",
+    alt: "Échange entre dirigeants en marge d'une conférence organisée par BIP",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
+  investir: {
+    src: "/images/investir-conference.webp",
+    alt: "Dirigeants et investisseurs réunis lors d'une conférence organisée par BIP à Abidjan",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
+  leverDesFonds: {
+    src: "/images/lever-des-fonds-panel.webp",
+    alt: "Panel « Quels enseignements pour l'Afrique ? » avec Jean-Jacques ATTEMENE ZATRI, Japan Innovation Tour 2026",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
+  aPropos: {
+    src: "/images/a-propos-groupe.webp",
+    alt: "Participants et intervenants du Japan Innovation Tour 2026 organisé par Bridge Investment Partners",
+    credit: "BIP – Japan Innovation Tour 2026",
+  },
 };

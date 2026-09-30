@@ -50,8 +50,8 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 - [x] Les **clients et partenaires cités** acceptent d'être nommés sur le site (confirmé par BIP le 30/09/2026).
 - [x] **MBA** : Banque et Finance, option corporate finance, CESAG Business School ; **16 ans** d'expérience (confirmés).
 - [x] **Profil du gérant** (M. ATTEMENE Zatri Jean-Jacques) rédigé d'après ses CV — `content/equipe.ts`.
-- [x] **Photo** du directeur général : issue de « signature PROFIL ATTEMENE JEAN JACQUES.png » (Google Drive), recadrée
-      (`public/equipe/jean-jacques-attemene.webp`). Une photo d'origine en haute définition reste préférable.
+- [x] **Photo** du directeur général : photo du Japan Innovation Tour 2026 fournie par BIP, recadrée
+      (`public/equipe/jean-jacques-attemene.webp`).
 - [ ] **Lien LinkedIn**, profils d'autres membres
       éventuels, et **photos terrain** originales (avec l'accord des personnes photographiées).
 - [x] **Histoire de BIP** : paragraphe rédigé d'après les CV (page À propos) — à relire.
@@ -60,16 +60,10 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 
 ## 5. Photos — `config/images.ts`
 
-Le réseau de développement ne permettait pas d'accéder à Unsplash : des visuels neutres s'affichent en attendant.
-À fournir ou à choisir (libres de droits, avec crédit) :
-
-- [ ] `accueil` — vue d'Abidjan (Plateau, quartier d'affaires)
-- [ ] `ceder` — réunion d'affaires dans un bureau
-- [ ] `investir` — Abidjan (pont, lagune Ébrié)
-- [ ] `leverDesFonds` — échange autour d'un plan d'affaires
-- [ ] `aPropos` — bureaux modernes
-
-Rappel : aucune photo de personne ne doit être présentée comme membre de l'équipe ou client.
+- [x] Photos du **Japan Innovation Tour 2026** (fournies par BIP le 30/09/2026) utilisées sur l'accueil, Céder,
+      Investir, Lever des fonds et À propos (`public/images/`).
+- [ ] Confirmer que les personnes visibles sur ces photos (intervenants, participants) sont d'accord pour apparaître
+      sur le site.
 
 ## 6. Identité visuelle
 
