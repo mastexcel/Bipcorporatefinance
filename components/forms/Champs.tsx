@@ -268,7 +268,7 @@ export function CasesMultiples({
       <legend className="mb-2 font-semibold text-anthracite">
         {legende} <span className="text-rouge" aria-hidden="true">*</span>
       </legend>
-      <div className="grid gap-2 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {options.map((o) => (
           <label key={o.valeur} className="flex min-h-11 cursor-pointer items-center gap-3 text-base">
             <input type="checkbox" name={nom} value={o.valeur} checked={valeurs.includes(o.valeur)} onChange={() => basculer(o.valeur)} className="h-5 w-5 accent-[#d7261e]" />

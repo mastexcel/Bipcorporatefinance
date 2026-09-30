@@ -34,7 +34,7 @@ export function BlocCoordonnees({
 }) {
   const maj = (cle: keyof ValeursCoordonnees) => (v: string) => onChange({ ...valeurs, [cle]: v });
   return (
-    <div className="grid gap-5 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       <ChampTexte id={`${prefixe}-nom`} label="Nom et prénom" valeur={valeurs.nom} onChange={maj("nom")} erreur={erreurs.nom} autoComplete="name" />
       <ChampTexte id={`${prefixe}-fonction`} label="Fonction" valeur={valeurs.fonction} onChange={maj("fonction")} erreur={erreurs.fonction} autoComplete="organization-title" />
       <ChampTexte id={`${prefixe}-entreprise`} label="Entreprise" valeur={valeurs.entreprise} onChange={maj("entreprise")} erreur={erreurs.entreprise} autoComplete="organization" />

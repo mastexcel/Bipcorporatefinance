@@ -18,6 +18,7 @@ const lignes: [string, React.ReactNode][] = [
   ["Siège social", <ACompleter key="s">À COMPLÉTER : adresse complète</ACompleter>],
   ["Téléphone", site.coordonnees.telephone],
   ["E-mail", site.coordonnees.email],
+  ["WhatsApp", site.whatsapp.affichage],
   ["Directeur de la publication", <ACompleter key="d" />],
   ["Hébergeur", <span key="h">Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis — <ACompleter>À CONFIRMER</ACompleter></span>],
 ];

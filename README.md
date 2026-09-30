@@ -90,7 +90,8 @@ Le **score de préparation** se règle dans `config/readiness.ts` (chaque bloc d
 3. Renseignez dans `.env.local` (et dans Vercel, § 7) :
    - `RESEND_API_KEY` : la clé ;
    - `EMAIL_FROM` : l'expéditeur, sur le domaine vérifié (ex. `BIP Corporate Finance <contact@votre-domaine.com>`) ;
-   - `EMAIL_TO` : la ou les adresses de réception des demandes, séparées par des virgules.
+   - `EMAIL_TO` : la ou les adresses de réception des demandes, séparées par des virgules
+     (`contact@bridgeinvestmentpartners.net`).
 
 Chaque formulaire envoie un e-mail à BIP (avec « Répondre à » = le visiteur). Le simulateur et le score envoient en plus une
 synthèse au visiteur. Le résultat du simulateur est **recalculé sur le serveur** avant envoi.
@@ -110,8 +111,8 @@ limitation à 5 envois par IP toutes les 10 minutes, taille de requête limitée
 ### Mesure d'audience et WhatsApp
 - `NEXT_PUBLIC_GA4_ID` (ex. `G-XXXXXXX`) et `NEXT_PUBLIC_META_PIXEL_ID` : chargés **uniquement après consentement**.
   Événements envoyés : `simulation_commencee`, `simulation_terminee`, `coordonnees_envoyees` (+ `score_commence`, `score_termine`).
-- `NEXT_PUBLIC_WHATSAPP_NUMBER` : numéro international, chiffres uniquement (ex. `2250700000000`). Sans numéro, le bouton
-  WhatsApp flottant est masqué.
+- `NEXT_PUBLIC_WHATSAPP_NUMBER` : numéro international, chiffres uniquement. Facultatif : par défaut, le WhatsApp de BIP
+  (+225 05 84 37 48 48, défini dans `config/site.ts`) est utilisé.
 
 ## 5. Ajouter un article
 
@@ -141,12 +142,34 @@ Si le client ne souhaite pas être nommé, laissez `client: null` : la descripti
 
 ## 8. Brancher le nom de domaine
 
+### Option recommandée : un sous-domaine du site existant de BIP
+
+Le site de BIP Corporate Finance peut être publié **sous le domaine existant `bridgeinvestmentpartners.net`**, sans
+acheter de nouveau domaine et sans toucher au site actuel, via un sous-domaine, par exemple
+`corporatefinance.bridgeinvestmentpartners.net` :
+
+1. Vercel → projet → **Settings → Domains** → ajoutez `corporatefinance.bridgeinvestmentpartners.net`.
+2. Chez le gestionnaire DNS de `bridgeinvestmentpartners.net`, créez l'enregistrement indiqué par Vercel
+   (en général un `CNAME` `corporatefinance` → `cname.vercel-dns.com`). Le site actuel n'est pas affecté.
+3. Mettez `NEXT_PUBLIC_SITE_URL=https://corporatefinance.bridgeinvestmentpartners.net` et redéployez.
+4. Sur le site actuel de BIP, ajoutez un lien « Corporate Finance » vers ce sous-domaine (menu ou page d'accueil).
+
+Autre possibilité : servir le site sous un chemin du site actuel (`bridgeinvestmentpartners.net/corporate-finance`).
+C'est plus contraignant : il faut une règle de réécriture sur l'hébergeur du site actuel et l'option `basePath` de Next.js.
+
+### Avec un domaine dédié
+
 1. Vercel → projet → **Settings → Domains** → ajoutez `votre-domaine.com` et `www.votre-domaine.com`.
 2. Chez votre registrar, créez les enregistrements DNS indiqués par Vercel (généralement un `A` vers l'IP Vercel pour le
    domaine nu et un `CNAME` `www` → `cname.vercel-dns.com`).
 3. Choisissez le domaine principal (redirection de l'autre), puis mettez `NEXT_PUBLIC_SITE_URL` à jour et redéployez.
-4. Ajoutez le domaine dans Turnstile et vérifiez-le dans Resend.
-5. Déclarez le site dans Google Search Console et soumettez `https://votre-domaine.com/sitemap.xml`.
+
+### Dans tous les cas
+
+- Ajoutez le domaine (ou sous-domaine) dans Turnstile.
+- Vérifiez `bridgeinvestmentpartners.net` dans Resend (enregistrements DNS SPF/DKIM fournis par Resend) pour envoyer depuis
+  `contact@bridgeinvestmentpartners.net` ; cette vérification n'affecte pas la messagerie existante.
+- Déclarez le site dans Google Search Console et soumettez `/sitemap.xml`.
 
 ## 9. Photos
 

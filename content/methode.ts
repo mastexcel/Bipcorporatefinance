@@ -1,78 +1,79 @@
 /**
  * Contenu de la page « Notre méthode » : 10 étapes et FAQ.
- * Les durées indicatives sont à valider par BIP ([À VALIDER]).
+ * Durées indicatives communiquées par BIP le 30/09/2026.
  */
 
 export interface EtapeProcessus {
   titre: string;
   quoi: string;
   aFournir: string;
-  /** Durée indicative — [À VALIDER] par BIP. */
+  /** Durée indicative (variable selon les dossiers). */
   duree: string;
 }
 
-export const DUREE_A_VALIDER = "[À VALIDER]";
+export const MENTION_DUREES = "Durées indicatives, variables selon les dossiers.";
+export const DUREE_TOTALE = "6 à 12 mois";
 
 export const etapesProcessus: EtapeProcessus[] = [
   {
     titre: "Premier échange confidentiel et accord de confidentialité",
     quoi: "Nous faisons connaissance, comprenons votre projet et vos objectifs. Un accord de confidentialité est signé dès ce premier échange.",
     aFournir: "Une présentation orale de l'entreprise et de votre projet.",
-    duree: DUREE_A_VALIDER,
+    duree: "1 à 2 semaines",
   },
   {
     titre: "Diagnostic et évaluation",
     quoi: "Analyse des comptes, retraitement de l'EBE, application de plusieurs méthodes d'évaluation. Nous vous remettons une fourchette de valeur et la liste des points à améliorer.",
     aFournir: "Les états financiers des 3 derniers exercices, la balance, l'état des dettes et les principaux contrats.",
-    duree: DUREE_A_VALIDER,
+    duree: "2 à 4 semaines",
   },
   {
     titre: "Lettre de mission",
     quoi: "Nous formalisons notre intervention : périmètre, calendrier et honoraires (honoraires fixes et honoraires de succès).",
     aFournir: "Votre validation des objectifs (prix, calendrier, profil d'acquéreur souhaité).",
-    duree: DUREE_A_VALIDER,
+    duree: "1 semaine",
   },
   {
     titre: "Préparation : teaser, mémorandum, data room",
     quoi: "Rédaction d'un teaser anonyme, d'un mémorandum d'information détaillé et constitution d'une data room sécurisée.",
     aFournir: "Documents juridiques, financiers, commerciaux et sociaux ; disponibilité pour des entretiens.",
-    duree: DUREE_A_VALIDER,
+    duree: "4 à 6 semaines",
   },
   {
     titre: "Identification et approche ciblée des acquéreurs",
     quoi: "Sélection d'une liste d'acquéreurs pertinents (groupes, investisseurs, fonds), validée avec vous, puis envoi du teaser anonyme.",
     aFournir: "Votre avis sur la liste : acquéreurs à privilégier ou à exclure (concurrents directs, par exemple).",
-    duree: DUREE_A_VALIDER,
+    duree: "4 à 8 semaines",
   },
   {
     titre: "Accords de confidentialité et envoi du mémorandum",
     quoi: "Les acquéreurs intéressés signent un accord de confidentialité avant de recevoir le mémorandum d'information.",
     aFournir: "Réponses aux premières questions des acquéreurs, par notre intermédiaire.",
-    duree: DUREE_A_VALIDER,
+    duree: "En parallèle de l'étape 5",
   },
   {
     titre: "Réception et comparaison des offres indicatives",
     quoi: "Nous analysons et comparons les offres : prix, structure, conditions, solidité de l'acquéreur. Nous vous recommandons les acquéreurs à retenir.",
     aFournir: "Votre décision sur les acquéreurs admis en due diligence.",
-    duree: DUREE_A_VALIDER,
+    duree: "3 à 4 semaines",
   },
   {
     titre: "Due diligence des acquéreurs retenus",
     quoi: "Les acquéreurs auditent l'entreprise (finances, juridique, fiscal, social). Nous coordonnons les échanges et préservons votre disponibilité.",
     aFournir: "Accès à la data room, réponses aux questions, rencontres avec l'équipe de direction si nécessaire.",
-    duree: DUREE_A_VALIDER,
+    duree: "4 à 8 semaines",
   },
   {
     titre: "Offre ferme, protocole de cession et garantie d'actif et de passif",
     quoi: "Négociation de l'offre ferme puis du protocole de cession et de la garantie d'actif et de passif, avec votre avocat.",
     aFournir: "Vos arbitrages sur les points de négociation ; la coordination avec votre avocat et votre expert-comptable.",
-    duree: DUREE_A_VALIDER,
+    duree: "3 à 6 semaines",
   },
   {
     titre: "Closing et accompagnement de la transition",
     quoi: "Signature des actes, paiement du prix et transfert des titres. Nous accompagnons ensuite la transition avec le repreneur.",
     aFournir: "Les documents de closing ; votre implication dans la transition convenue.",
-    duree: DUREE_A_VALIDER,
+    duree: "2 à 4 semaines, puis accompagnement selon l'accord",
   },
 ];
 
@@ -90,7 +91,7 @@ export const faqMethode: QuestionFaqTexte[] = [
   {
     question: "Combien de temps dure une cession ?",
     reponse:
-      "Cela dépend de la préparation de l'entreprise, du nombre d'acquéreurs et de la complexité de l'opération. Plusieurs mois sont généralement nécessaires entre le lancement du processus et le closing. Nous établissons un calendrier indicatif dès le diagnostic.",
+      "Comptez en général 6 à 12 mois entre le premier échange et le closing. La durée varie selon la préparation de l'entreprise, le nombre d'acquéreurs et la complexité de l'opération. Nous établissons un calendrier indicatif dès le diagnostic.",
   },
   {
     question: "Comment garantissez-vous la confidentialité ?",

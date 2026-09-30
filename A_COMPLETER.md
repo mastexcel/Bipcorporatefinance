@@ -28,12 +28,16 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 
 ## 3. Coordonnées et réseaux — `config/site.ts` et variables d'environnement
 
-- [ ] Numéro **WhatsApp** (`NEXT_PUBLIC_WHATSAPP_NUMBER`) — sans lui, le bouton flottant est masqué.
-- [ ] **Téléphone** et **e-mail** de contact affichés.
+- [x] Numéro **WhatsApp** : +225 05 84 37 48 48 (fourni le 30/09/2026, intégré dans `config/site.ts`).
+- [x] **E-mail** de contact et de réception des demandes : contact@bridgeinvestmentpartners.net (fourni le 30/09/2026).
+- [ ] **Téléphone** fixe ou mobile à afficher (le numéro WhatsApp peut-il servir aussi de ligne téléphonique ?).
 - [ ] **Adresse** exacte (actuellement « [À CONFIRMER : Abidjan, Riviera Faya] »).
 - [ ] URL des pages **LinkedIn** et **Facebook**.
-- [ ] **Nom de domaine** définitif (`NEXT_PUBLIC_SITE_URL`).
-- [ ] Adresse(s) de **réception des demandes** (`EMAIL_TO`) et adresse d'expédition (`EMAIL_FROM`).
+- [ ] **Adresse du site** : choisir entre un sous-domaine du site existant (recommandé, ex.
+      `corporatefinance.bridgeinvestmentpartners.net`) et un domaine dédié, puis renseigner `NEXT_PUBLIC_SITE_URL`.
+      Voir README § 8.
+- [ ] Vérifier le domaine **bridgeinvestmentpartners.net** dans Resend pour pouvoir envoyer depuis
+      contact@bridgeinvestmentpartners.net (`EMAIL_FROM`).
 - [ ] Comptes et clés : **Resend**, **Cloudflare Turnstile**, **Google Analytics 4**, **Meta Pixel**.
 
 ## 4. Contenus
@@ -43,7 +47,7 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 - [ ] **Équipe** : photo, nom, fonction, parcours, certifications et lien LinkedIn de chaque membre (dont M. ATTEMENE Zatri
       Jean-Jacques, gérant) — `app/a-propos/page.tsx`, tableau `equipe`. Les photos vont dans `public/equipe/`.
 - [ ] **Histoire détaillée** de BIP — `app/a-propos/page.tsx`.
-- [ ] **Durées indicatives** des 10 étapes du processus — `content/methode.ts` (`DUREE_A_VALIDER`).
+- [x] **Durées indicatives** des 10 étapes du processus (fournies le 30/09/2026 ; durée totale 6 à 12 mois).
 - [ ] Relire les **réponses de la FAQ** et les **3 articles** de départ.
 
 ## 5. Photos — `config/images.ts`
@@ -69,7 +73,8 @@ Rappel : aucune photo de personne ne doit être présentée comme membre de l'é
 - [ ] **Mentions légales** — `app/mentions-legales/page.tsx` : forme juridique, capital social, RCCM, compte contribuable,
       siège social, directeur de la publication ; confirmer l'hébergeur (Vercel).
 - [ ] **Politique de confidentialité** — `app/confidentialite/page.tsx` : date de mise à jour, forme juridique et RCCM,
-      e-mail dédié aux données personnelles, référence de la **déclaration ou autorisation ARTCI**, **durées de
+      e-mail pour les données personnelles (contact@bridgeinvestmentpartners.net par défaut, à remplacer si une adresse
+      dédiée existe), référence de la **déclaration ou autorisation ARTCI**, **durées de
       conservation**, validation par un juriste des **transferts de données hors de Côte d'Ivoire** (Vercel, Resend,
       Cloudflare, Google, Meta).
 - [ ] **Relecture par un avocat** de l'ensemble du site au regard de la réglementation **AMF-UMOA** et du cadre **OHADA**.

@@ -52,14 +52,22 @@ export function PiedDePage() {
             <p>Bridge Investment Partners</p>
             <p>{site.coordonnees.adresse}</p>
             <p>Tél. : {site.coordonnees.telephone}</p>
-            <p>E-mail : {site.coordonnees.email}</p>
+            <p>
+                  E-mail :{" "}
+                  <a href={`mailto:${site.coordonnees.email}`} className="break-all text-anthracite underline underline-offset-2 hover:text-rouge">
+                    {site.coordonnees.email}
+                  </a>
+                </p>
+                {whatsapp && (
+                  <p>
+                    WhatsApp :{" "}
+                    <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap text-anthracite underline underline-offset-2 hover:text-rouge">
+                      {site.whatsapp.affichage}
+                    </a>
+                  </p>
+                )}
           </address>
           <ul className="mt-4 flex flex-wrap gap-4 text-base">
-            {whatsapp && (
-              <li>
-                <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="font-semibold text-anthracite hover:text-rouge">WhatsApp</a>
-              </li>
-            )}
             {site.reseaux.linkedin && (
               <li>
                 <a href={site.reseaux.linkedin} target="_blank" rel="noopener noreferrer" className="font-semibold text-anthracite hover:text-rouge">LinkedIn</a>

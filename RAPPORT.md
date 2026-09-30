@@ -60,5 +60,5 @@ avec les images définitives.
    formulaires. C'est sans effet notable sur les scores actuels. Si besoin, on pourra passer à `zod/mini`.
 8. **Relecture juridique** : mentions légales, confidentialité (déclaration ARTCI, transferts hors de Côte d'Ivoire) et
    conformité AMF-UMOA / OHADA, par un avocat, avant la mise en ligne.
-9. **Contenus** : chiffres clés, références, équipe, durées du processus et coordonnées restent à fournir
-   (voir **A_COMPLETER.md**).
+9. **Contenus** : chiffres clés, références, équipe, téléphone et adresse restent à fournir (voir **A_COMPLETER.md**).
+   Durées du processus, e-mail de contact et WhatsApp ont été intégrés.

@@ -20,15 +20,20 @@ export const site = {
     ville: "Abidjan",
     pays: "Côte d'Ivoire",
     telephone: A_COMPLETER,
-    email: A_COMPLETER,
+    email: "contact@bridgeinvestmentpartners.net",
   },
   reseaux: {
     linkedin: "" as string, // [À COMPLÉTER] URL de la page LinkedIn
     facebook: "" as string, // [À COMPLÉTER] URL de la page Facebook
   },
   whatsapp: {
-    /** Numéro international, chiffres uniquement (variable NEXT_PUBLIC_WHATSAPP_NUMBER). */
-    numero: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "",
+    /**
+     * Numéro international, chiffres uniquement. Par défaut le WhatsApp de BIP
+     * (+225 05 84 37 48 48) ; la variable NEXT_PUBLIC_WHATSAPP_NUMBER le remplace si elle est définie.
+     */
+    numero: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "2250584374848",
+    /** Numéro tel qu'affiché sur le site. */
+    affichage: "+225 05 84 37 48 48",
     message:
       "Bonjour BIP, je souhaite échanger en toute confidentialité sur un projet concernant mon entreprise.",
   },

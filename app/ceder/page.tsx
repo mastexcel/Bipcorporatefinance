@@ -82,7 +82,7 @@ export default function Ceder() {
       </Section>
 
       <Section>
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <TitreSection
             surtitre="Anticiper"
             titre="Préparer sa cession 2 à 3 ans avant"

@@ -57,7 +57,7 @@ export default function APropos() {
       />
 
       <Section>
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
             <TitreSection surtitre="Notre mission" titre="Révéler la valeur, trouver le bon acquéreur" />
             <p className="text-lg text-gris">

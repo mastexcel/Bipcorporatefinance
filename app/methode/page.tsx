@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { etapesProcessus, faqMethode } from "@/content/methode";
+import { DUREE_TOTALE, etapesProcessus, faqMethode, MENTION_DUREES } from "@/content/methode";
 import { AppelFinal } from "@/components/sections/AppelFinal";
 import { Faq } from "@/components/ui/Faq";
 import { PageHero } from "@/components/ui/PageHero";
@@ -33,7 +33,15 @@ export default function Methode() {
       />
 
       <Section>
-        <TitreSection surtitre="Le processus" titre="10 étapes, du premier échange au closing" />
+        <TitreSection
+          surtitre="Le processus"
+          titre="10 étapes, du premier échange au closing"
+          intro={
+            <>
+              Durée totale : <strong className="text-anthracite">{DUREE_TOTALE}</strong>. {MENTION_DUREES}
+            </>
+          }
+        />
         <ol className="space-y-6">
           {etapesProcessus.map((e, i) => (
             <li key={e.titre} className="grid gap-4 rounded-lg border border-bordure p-6 md:grid-cols-[4rem_1fr]">
@@ -52,9 +60,9 @@ export default function Methode() {
                     <dd className="mt-1 text-gris">{e.aFournir}</dd>
                   </div>
                   <div>
-                    <dt className="font-semibold text-anthracite">Durée indicative</dt>
+                    <dt className="font-semibold text-anthracite">Durée indicative*</dt>
                     <dd className="mt-1">
-                      <span className="a-completer">{e.duree}</span>
+                      <span className="font-semibold text-anthracite">{e.duree}</span>
                     </dd>
                   </div>
                 </dl>
@@ -62,6 +70,7 @@ export default function Methode() {
             </li>
           ))}
         </ol>
+        <p className="mt-6 text-base text-gris">* {MENTION_DUREES} Durée totale indicative : {DUREE_TOTALE}.</p>
       </Section>
 
       <Section alternee etroit id="faq">

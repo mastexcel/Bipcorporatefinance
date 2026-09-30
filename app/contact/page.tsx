@@ -20,7 +20,7 @@ export default function Contact() {
         intro="Un premier échange confidentiel et sans engagement avec un associé BIP. Nous vous répondons rapidement."
       />
       <Section>
-        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr]">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.5fr_1fr]">
           <div>
             <h2 className="mb-6 text-2xl">Votre demande</h2>
             <FormulaireContact />
@@ -32,7 +32,20 @@ export default function Contact() {
                 <p className="font-semibold text-anthracite">BIP – Bridge Investment Partners</p>
                 <p>{site.coordonnees.adresse}</p>
                 <p>Tél. : {site.coordonnees.telephone}</p>
-                <p>E-mail : {site.coordonnees.email}</p>
+                <p>
+                  E-mail :{" "}
+                  <a href={`mailto:${site.coordonnees.email}`} className="break-all text-anthracite underline underline-offset-2 hover:text-rouge">
+                    {site.coordonnees.email}
+                  </a>
+                </p>
+                {whatsapp && (
+                  <p>
+                    WhatsApp :{" "}
+                    <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap text-anthracite underline underline-offset-2 hover:text-rouge">
+                      {site.whatsapp.affichage}
+                    </a>
+                  </p>
+                )}
               </address>
               <ul className="mt-4 space-y-2 text-base">
                 {whatsapp && (

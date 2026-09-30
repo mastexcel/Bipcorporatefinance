@@ -44,7 +44,7 @@ export function FormulaireContact() {
     <form onSubmit={soumettre} noValidate className="relative space-y-6">
       <p className="text-base text-gris">Les champs marqués d&apos;un astérisque (*) sont obligatoires.</p>
       <BlocCoordonnees prefixe="contact" valeurs={coord} onChange={setCoord} erreurs={err} />
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <ChampSelect
           id="contact-type"
           label="Type de projet"

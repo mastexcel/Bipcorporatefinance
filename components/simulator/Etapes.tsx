@@ -19,7 +19,7 @@ interface PropsEtape<K extends keyof SaisieSimulateur> {
 
 export function EtapeEntreprise({ valeurs, maj, erreurs }: PropsEtape<"entreprise">) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div className="sm:col-span-2">
         <ChampSelect
           id="sim-secteur"
@@ -81,7 +81,7 @@ export function EtapeChiffres({ valeurs, maj, erreurs }: PropsEtape<"chiffres">)
       <p className="text-base text-gris">
         Montants en FCFA, issus de vos états financiers du dernier exercice clos. Saisissez 0 si un poste est nul.
       </p>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <ChampMontant id="sim-ca" label="Chiffre d'affaires" obligatoire valeur={valeurs.chiffreAffaires} onChange={(v) => maj("chiffreAffaires", v)} erreur={erreurs.chiffreAffaires} />
         <ChampMontant
           id="sim-ebe"
@@ -127,7 +127,7 @@ export function EtapeChiffres({ valeurs, maj, erreurs }: PropsEtape<"chiffres">)
       </div>
       <fieldset className="rounded-lg border border-bordure p-5">
         <legend className="px-2 font-titre font-semibold">Historique (pour mesurer la croissance)</legend>
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <ChampMontant id="sim-ca-n1" label="Chiffre d'affaires de l'exercice précédent (N-1)" valeur={valeurs.chiffreAffairesN1} onChange={(v) => maj("chiffreAffairesN1", v)} erreur={erreurs.chiffreAffairesN1} />
           <ChampMontant id="sim-ca-n2" label="Chiffre d'affaires il y a deux exercices (N-2)" valeur={valeurs.chiffreAffairesN2} onChange={(v) => maj("chiffreAffairesN2", v)} erreur={erreurs.chiffreAffairesN2} />
         </div>
@@ -168,7 +168,7 @@ export function EtapeRetraitements({ saisie, maj, erreurs }: { saisie: SaisieSim
         </p>
         <fieldset className="space-y-5">
           <legend className="mb-2 font-titre text-lg font-semibold">Rémunération du dirigeant</legend>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <ChampMontant id="sim-rem-actuelle" label="Votre rémunération annuelle actuelle" valeur={valeurs.remunerationDirigeantActuelle} onChange={(v) => maj("remunerationDirigeantActuelle", v)} erreur={erreurs.remunerationDirigeantActuelle} />
             <ChampMontant
               id="sim-rem-marche"
@@ -181,14 +181,14 @@ export function EtapeRetraitements({ saisie, maj, erreurs }: { saisie: SaisieSim
         </fieldset>
         <fieldset className="space-y-5">
           <legend className="mb-2 font-titre text-lg font-semibold">Éléments exceptionnels de l&apos;exercice</legend>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <ChampMontant id="sim-charges-exc" label="Charges exceptionnelles non récurrentes (à rajouter)" valeur={valeurs.chargesExceptionnelles} onChange={(v) => maj("chargesExceptionnelles", v)} erreur={erreurs.chargesExceptionnelles} />
             <ChampMontant id="sim-produits-exc" label="Produits exceptionnels (à retirer)" valeur={valeurs.produitsExceptionnels} onChange={(v) => maj("produitsExceptionnels", v)} erreur={erreurs.produitsExceptionnels} />
           </div>
         </fieldset>
         <fieldset className="space-y-5">
           <legend className="mb-2 font-titre text-lg font-semibold">Loyer versé à une société ou une personne liée</legend>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <ChampMontant id="sim-loyer-actuel" label="Loyer annuel actuellement payé" valeur={valeurs.loyerActuel} onChange={(v) => maj("loyerActuel", v)} erreur={erreurs.loyerActuel} />
             <ChampMontant id="sim-loyer-marche" label="Loyer annuel au prix du marché" valeur={valeurs.loyerMarche} onChange={(v) => maj("loyerMarche", v)} erreur={erreurs.loyerMarche} />
           </div>

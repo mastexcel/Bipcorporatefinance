@@ -37,7 +37,8 @@ export default function Confidentialite() {
           Bridge Investment Partners (BIP), <ACompleter>FORME JURIDIQUE, RCCM</ACompleter>, dont le siège est situé {site.coordonnees.adresse}.
         </p>
         <p>
-          Contact pour toute question relative à vos données : <ACompleter>E-MAIL DÉDIÉ</ACompleter>.
+          Contact pour toute question relative à vos données :{" "}
+          <a href={`mailto:${site.coordonnees.email}`} className="text-rouge underline underline-offset-2">{site.coordonnees.email}</a>.
         </p>
         <p>
           Formalités auprès de l&apos;ARTCI : <ACompleter>RÉFÉRENCE DE LA DÉCLARATION OU DE L&apos;AUTORISATION</ACompleter>
@@ -119,7 +120,8 @@ export default function Confidentialite() {
           données. Vous pouvez retirer votre consentement à tout moment.
         </p>
         <p>
-          Pour exercer ces droits, écrivez-nous à <ACompleter>E-MAIL DÉDIÉ</ACompleter> en précisant votre demande. Si vous estimez que
+          Pour exercer ces droits, écrivez-nous à{" "}
+          <a href={`mailto:${site.coordonnees.email}`} className="text-rouge underline underline-offset-2">{site.coordonnees.email}</a> en précisant votre demande. Si vous estimez que
           vos droits ne sont pas respectés, vous pouvez saisir l&apos;ARTCI.
         </p>
       </Bloc>

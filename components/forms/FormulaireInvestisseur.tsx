@@ -96,7 +96,7 @@ export function FormulaireInvestisseur() {
           { valeur: "EUR", libelle: "Euros" },
         ]}
       />
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <ChampMontant id="inv-ticket-min" label="Ticket minimum" devise={devise === "EUR" ? "€" : "FCFA"} valeur={ticketMin} onChange={setTicketMin} erreur={err.ticketMin} obligatoire />
         <ChampMontant id="inv-ticket-max" label="Ticket maximum" devise={devise === "EUR" ? "€" : "FCFA"} valeur={ticketMax} onChange={setTicketMax} erreur={err.ticketMax} obligatoire />
       </div>
