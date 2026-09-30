@@ -50,7 +50,9 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
 - [x] Les **clients et partenaires cités** acceptent d'être nommés sur le site (confirmé par BIP le 30/09/2026).
 - [x] **MBA** : Banque et Finance, option corporate finance, CESAG Business School ; **16 ans** d'expérience (confirmés).
 - [x] **Profil du gérant** (M. ATTEMENE Zatri Jean-Jacques) rédigé d'après ses CV — `content/equipe.ts`.
-- [ ] **Photo** du directeur général en fichier original (`public/equipe/`), **lien LinkedIn**, profils d'autres membres
+- [x] **Photo** du directeur général : issue de « signature PROFIL ATTEMENE JEAN JACQUES.png » (Google Drive), recadrée
+      (`public/equipe/jean-jacques-attemene.webp`). Une photo d'origine en haute définition reste préférable.
+- [ ] **Lien LinkedIn**, profils d'autres membres
       éventuels, et **photos terrain** originales (avec l'accord des personnes photographiées).
 - [x] **Histoire de BIP** : paragraphe rédigé d'après les CV (page À propos) — à relire.
 - [x] **Durées indicatives** des 10 étapes du processus (fournies le 30/09/2026 ; durée totale 6 à 12 mois).

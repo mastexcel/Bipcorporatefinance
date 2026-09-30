@@ -144,7 +144,7 @@ export default function APropos() {
           <article key={m.nom} className="grid grid-cols-1 gap-10 rounded-lg border border-bordure p-6 sm:p-8 lg:grid-cols-[18rem_1fr]">
             <div>
               {m.photo ? (
-                <Image src={m.photo} alt={`Portrait de ${m.nom}`} width={288} height={288} className="aspect-square w-full rounded-md object-cover" />
+                <Image src={m.photo} alt={`Portrait de ${m.nom}`} width={288} height={288} className="aspect-square w-full max-w-72 rounded-full bg-fond object-cover shadow-sm ring-4 ring-orange/60 ring-offset-4" />
               ) : (
                 <div aria-hidden="true" className="degrade-bip flex aspect-square w-full max-w-72 items-center justify-center rounded-md font-titre text-6xl font-bold text-white">
                   {m.initiales}

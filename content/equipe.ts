@@ -25,7 +25,7 @@ export const equipe: MembreEquipe[] = [
   {
     nom: "Jean-Jacques ATTEMENE ZATRI",
     fonction: "Directeur général et co-fondateur",
-    photo: null,
+    photo: "/equipe/jean-jacques-attemene.webp",
     initiales: "JJA",
     presentation: [
       "Titulaire d'un MBA Banque et Finance, option corporate finance, du CESAG Business School (Dakar), Jean-Jacques ATTEMENE ZATRI cumule plus de 16 ans d'expérience en finance d'entreprise, analyse financière et accompagnement de PME en Afrique de l'Ouest.",
