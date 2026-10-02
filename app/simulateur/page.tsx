@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Simulateur } from "@/components/simulator/Simulateur";
 import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Simulateur de valorisation d'entreprise en Côte d'Ivoire",
@@ -12,23 +13,28 @@ export const metadata: Metadata = {
 export default function PageSimulateur() {
   return (
     <>
-      <section className="border-b border-bordure bg-fond py-12 sm:py-16">
+      <PageHero
+        chevauchement
+        surtitre="Simulateur de valorisation"
+        titre={"Combien vaut votre entreprise\u00a0?"}
+        intro={
+          <>
+            <p>
+              Une fourchette de valeur indicative en 5 étapes (environ 10 minutes), selon les méthodes reconnues par les normes
+              internationales d&apos;évaluation. Munissez-vous de vos derniers états financiers.
+            </p>
+            <p className="mt-4 text-base text-white/70">
+              <strong className="text-white">Confidentialité :</strong> vos chiffres restent dans votre navigateur : ils ne sont ni
+              enregistrés ni transmis, sauf si vous demandez à recevoir votre synthèse.
+            </p>
+          </>
+        }
+      />
+      <section className="fond-ivoire flow-root pb-16 sm:pb-24">
         <Container className="max-w-4xl">
-          <p className="mb-3 text-sm font-semibold tracking-widest text-rouge uppercase">Simulateur de valorisation</p>
-          <h1 className="souligne-bip text-3xl sm:text-5xl">Combien vaut votre entreprise ?</h1>
-          <p className="mt-6 text-lg text-gris">
-            Une fourchette de valeur indicative en 5 étapes (environ 10 minutes), selon les méthodes reconnues par les normes
-            internationales d&apos;évaluation. Munissez-vous de vos derniers états financiers.
-          </p>
-          <p className="mt-4 text-base text-gris">
-            <strong className="text-anthracite">Confidentialité :</strong> vos chiffres restent dans votre navigateur : ils ne sont ni enregistrés ni transmis, sauf si vous demandez à recevoir
-            votre synthèse.
-          </p>
-        </Container>
-      </section>
-      <section className="py-12 sm:py-16">
-        <Container className="max-w-4xl">
-          <Simulateur />
+          <div className="relative z-10 -mt-20 rounded-2xl bg-white p-5 shadow-2xl shadow-black/10 ring-1 ring-black/5 sm:-mt-24 sm:p-10">
+            <Simulateur />
+          </div>
         </Container>
       </section>
     </>

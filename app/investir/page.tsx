@@ -41,7 +41,7 @@ export default function Investir() {
         </div>
       </Section>
 
-      <Section alternee etroit id="criteres">
+      <Section fond="sable" etroit id="criteres">
         <TitreSection
           surtitre="Réseau d'acquéreurs"
           titre="Partagez vos critères d'investissement"

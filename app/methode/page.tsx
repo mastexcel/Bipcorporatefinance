@@ -75,7 +75,7 @@ export default function Methode() {
         <p className="mt-6 text-base text-gris">* {MENTION_DUREES} Durée totale indicative : {DUREE_TOTALE}.</p>
       </Section>
 
-      <Section alternee etroit id="faq">
+      <Section fond="motif" etroit id="faq">
         <TitreSection surtitre="Questions fréquentes" titre="Vos questions sur la cession" />
         <Faq questions={faqMethode.map((q) => ({ question: q.question, reponse: <p>{q.reponse}</p>, reponseTexte: q.reponse }))} />
         <p className="mt-6 text-base text-gris">

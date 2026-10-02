@@ -52,7 +52,7 @@ export default function LeverDesFonds() {
         </ol>
       </Section>
 
-      <Section alternee etroit>
+      <Section fond="sable" etroit>
         <div className="rounded-lg border-l-4 border-rouge bg-white p-6">
           <h2 className="text-xl">À noter</h2>
           <p className="mt-3 text-gris">

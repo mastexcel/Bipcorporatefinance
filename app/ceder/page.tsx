@@ -62,19 +62,20 @@ export default function Ceder() {
         </div>
       </Section>
 
-      <Section alternee>
+      <Section fond="nuit" aurores>
         <TitreSection
+          sombre
           surtitre="Le regard de l'acquéreur"
           titre="Ce qui fait la valeur d'une entreprise"
           intro="Un acquéreur achète une capacité à générer des résultats demain, pas seulement un bilan. Six critères pèsent particulièrement dans sa décision et dans le prix."
         />
         <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {facteursValeur.map((f, i) => (
-            <div key={f.titre} className="flex gap-4">
-              <span className="font-titre text-3xl font-bold text-orange-fonce" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <div key={f.titre} className="verre revele flex gap-4 rounded-2xl p-5">
+              <span className="font-titre text-3xl font-bold text-or" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <h3 className="text-lg">{f.titre}</h3>
-                <p className="mt-1 text-base text-gris">{f.texte}</p>
+                <p className="mt-1 text-base text-white/75">{f.texte}</p>
               </div>
             </div>
           ))}

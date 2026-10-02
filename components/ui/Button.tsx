@@ -1,14 +1,16 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
-type Variante = "principal" | "secondaire" | "discret";
+type Variante = "principal" | "secondaire" | "clair" | "discret";
 
 const styles: Record<Variante, string> = {
   // Bouton principal : dégradé rouge → orange (contraste AA avec le texte blanc).
   principal:
-    "degrade-bip text-white shadow-sm hover:brightness-110 hover:shadow-md",
+    "degrade-bip lueur text-white hover:-translate-y-0.5 hover:brightness-110",
   secondaire:
     "border-2 border-anthracite text-anthracite bg-white hover:border-rouge hover:text-rouge",
+  // Contour clair, pour les fonds sombres.
+  clair: "border-2 border-white/70 text-white bg-white/5 hover:bg-white hover:text-anthracite",
   discret: "text-rouge underline underline-offset-4 hover:text-rouge-fonce px-0",
 };
 

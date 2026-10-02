@@ -5,7 +5,7 @@ import { ACompleter } from "@/components/ui/ACompleter";
 /** Carte « tombstone » d'une opération, au format des banques d'affaires. */
 export function Tombstone({ reference }: { reference: Reference }) {
   return (
-    <article className="flex h-full flex-col items-center justify-between rounded-lg border border-bordure bg-white p-6 text-center shadow-sm">
+    <article className="carte-vivante revele flex h-full flex-col items-center justify-between rounded-2xl border border-bordure bg-white p-6 text-center shadow-sm">
       <p className="text-sm font-semibold tracking-widest text-rouge uppercase">{TYPES_OPERATION[reference.typeOperation]}</p>
       <div className="my-6 flex min-h-20 items-center justify-center">
         {reference.logo ? (

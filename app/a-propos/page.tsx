@@ -122,13 +122,14 @@ export default function APropos() {
         </div>
       </Section>
 
-      <Section alternee>
-        <TitreSection surtitre="Nos valeurs" titre="Ce qui nous guide" />
+      <Section fond="nuit" aurores>
+        <TitreSection sombre surtitre="Nos valeurs" titre="Ce qui nous guide" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {valeurs.map((v) => (
-            <div key={v.titre} className="rounded-lg bg-white p-6 shadow-sm">
+            <div key={v.titre} className="verre revele rounded-2xl p-6">
+              <span aria-hidden="true" className="degrade-bip mb-4 block h-1 w-10 rounded-full" />
               <h3 className="text-lg">{v.titre}</h3>
-              <p className="mt-2 text-base text-gris">{v.texte}</p>
+              <p className="mt-2 text-base text-white/75">{v.texte}</p>
             </div>
           ))}
         </div>

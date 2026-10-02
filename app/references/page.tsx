@@ -37,7 +37,7 @@ export default function References() {
         />
         <GrilleMissions missions={missionsReference} />
       </Section>
-      <Section alternee={references.length === 0}>
+      <Section fond="motif">
         <TitreSection surtitre="Ils nous ont fait confiance" titre="Partenaires, bailleurs et clients" />
         <ListePartenaires />
       </Section>

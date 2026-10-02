@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ScoreCession } from "@/components/readiness/ScoreCession";
 import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Score de préparation à la cession d'entreprise",
@@ -12,19 +13,17 @@ export const metadata: Metadata = {
 export default function PageScore() {
   return (
     <>
-      <section className="border-b border-bordure bg-fond py-12 sm:py-16">
+      <PageHero
+        chevauchement
+        surtitre="Score de préparation à la cession"
+        titre={"Votre entreprise est-elle prête à être cédée\u00a0?"}
+        intro="15 questions en 5 blocs (environ 5 minutes) : finances, clients et marché, organisation, juridique et fiscal, projet du dirigeant. Vous obtenez un score sur 100 et vos 3 actions prioritaires."
+      />
+      <section className="fond-ivoire flow-root pb-16 sm:pb-24">
         <Container className="max-w-4xl">
-          <p className="mb-3 text-sm font-semibold tracking-widest text-rouge uppercase">Score de préparation à la cession</p>
-          <h1 className="souligne-bip text-3xl sm:text-5xl">Votre entreprise est-elle prête à être cédée ?</h1>
-          <p className="mt-6 text-lg text-gris">
-            15 questions en 5 blocs (environ 5 minutes) : finances, clients et marché, organisation, juridique et fiscal, projet du
-            dirigeant. Vous obtenez un score sur 100 et vos 3 actions prioritaires.
-          </p>
-        </Container>
-      </section>
-      <section className="py-12 sm:py-16">
-        <Container className="max-w-4xl">
-          <ScoreCession />
+          <div className="relative z-10 -mt-20 rounded-2xl bg-white p-5 shadow-2xl shadow-black/10 ring-1 ring-black/5 sm:-mt-24 sm:p-10">
+            <ScoreCession />
+          </div>
         </Container>
       </section>
     </>

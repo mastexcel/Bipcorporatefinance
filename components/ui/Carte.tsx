@@ -17,8 +17,8 @@ export function Carte({
   className?: string;
 }) {
   return (
-    <div className={`flex h-full flex-col rounded-lg border border-bordure bg-white p-6 shadow-sm ${className}`}>
-      {icone && <div className="mb-4 text-rouge">{icone}</div>}
+    <div className={`carte-vivante revele flex h-full flex-col rounded-2xl border border-bordure bg-white p-7 shadow-sm ${className}`}>
+      {icone && <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-rouge to-orange text-white">{icone}</div>}
       <h3 className="mb-3 text-xl">{titre}</h3>
       <div className="flex-1 text-gris">{children}</div>
       {href && (

@@ -21,14 +21,14 @@ export default function Contact() {
         titre="Parlons de votre projet"
         intro="Un premier échange confidentiel et sans engagement avec un associé BIP. Nous vous répondons rapidement."
       />
-      <Section>
+      <Section fond="motif">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.5fr_1fr]">
-          <div>
+          <div className="rounded-2xl bg-white p-6 shadow-xl shadow-black/5 ring-1 ring-black/5 sm:p-8">
             <h2 className="mb-6 text-2xl">Votre demande</h2>
             <FormulaireContact />
           </div>
           <aside className="space-y-6">
-            <div className="rounded-lg bg-fond p-6">
+            <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
               <h2 className="text-xl">Coordonnées</h2>
               <address className="mt-4 space-y-2 text-base text-gris not-italic">
                 <p className="font-semibold text-anthracite">BIP – Bridge Investment Partners</p>
@@ -71,7 +71,7 @@ export default function Contact() {
                 )}
               </ul>
             </div>
-            <div className="rounded-lg border-l-4 border-rouge p-6">
+            <div className="rounded-2xl border-l-4 border-rouge bg-white/80 p-6">
               <p className="font-titre font-semibold">Confidentialité</p>
               <p className="mt-2 text-base text-gris">Vos informations sont traitées de manière strictement confidentielle.</p>
             </div>
