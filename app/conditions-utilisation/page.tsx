@@ -32,7 +32,7 @@ export default function ConditionsUtilisation() {
         intro={
           <>
             Les présentes conditions encadrent l&apos;utilisation du site{" "}
-            <span className="break-all">{site.url.replace("https://", "")}</span>, édité par {site.societe.denomination}. En naviguant
+            <span className="[overflow-wrap:anywhere]">{site.url.replace("https://", "")}</span>, édité par {site.societe.denomination}. En naviguant
             sur le site, vous les acceptez.
           </>
         }
@@ -41,7 +41,7 @@ export default function ConditionsUtilisation() {
 
       <Bloc titre="1. Éditeur du site">
         <p>
-          Le site est édité par {site.societe.denomination}, {site.societe.formeJuridique.toLowerCase()} au capital de{" "}
+          Le site est édité par {site.societe.denomination}, {site.societe.formeJuridique.replace("Société", "société")} au capital de{" "}
           {site.societe.capital}, immatriculée au RCCM sous le numéro {site.societe.rccm}. Les informations complètes figurent dans les{" "}
           <Link href="/mentions-legales" className={lien}>mentions légales</Link>.
         </p>
