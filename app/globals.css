@@ -1,0 +1,395 @@
+@import "tailwindcss";
+
+/*
+ * Identité visuelle BIP (couleurs issues du logo).
+ * - anthracite : titres et textes
+ * - gris : textes secondaires (contraste 5,3:1 sur blanc)
+ * - rouge : boutons principaux, accents (contraste 5:1 avec le blanc)
+ * - orange : dégradés, soulignements, chiffres en grand format uniquement
+ *   (contraste 3,2:1 : jamais pour du texte courant)
+ * - orange-fonce : fin du dégradé des boutons (contraste 4,5:1 avec le blanc)
+ */
+@theme {
+  --color-anthracite: #3a3a3a;
+  --color-gris: #6b6b6b;
+  --color-rouge: #d7261e;
+  --color-rouge-fonce: #b51f18;
+  --color-orange: #f26522;
+  --color-orange-fonce: #d2461a;
+  --color-fond: #f7f7f8;
+  --color-bordure: #e4e4e7;
+
+  /*
+   * Palette d'atmosphère : elle accompagne le rouge et l'orange du logo sans
+   * les concurrencer.
+   * - nuit : fonds immersifs (bandeaux, appels à l'action, pied de page)
+   * - ivoire / sable : fonds chaleureux, évocation de la terre ouest-africaine
+   * - or : chiffres et ornements sur fond sombre (contraste 8,6:1 sur nuit)
+   * - corail : surtitres et liens sur fond sombre (contraste 6,9:1 sur nuit)
+   * - lagune : contrepoint froid (lagune Ébrié), en touches seulement
+   */
+  --color-nuit: #12131a;
+  --color-nuit-2: #1c1e29;
+  --color-ivoire: #fbf7f1;
+  --color-sable: #f2e7d8;
+  --color-or: #e3a84e;
+  --color-corail: #ff8a5c;
+  --color-lagune: #0f6b6b;
+  --color-lagune-clair: #5fc4bd;
+
+  --font-titre: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-texte: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    background: #ffffff;
+    color: var(--color-anthracite);
+    font-family: var(--font-texte);
+    font-size: 1.0625rem; /* 17 px : au-dessus du minimum de 16 px */
+    line-height: 1.65;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-titre);
+    color: var(--color-anthracite);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-rouge);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  ::selection {
+    background: #fbd5c3;
+  }
+}
+
+@layer components {
+  /* Dégradé rouge → orange : à utiliser avec parcimonie. */
+  .degrade-bip {
+    background-image: linear-gradient(90deg, var(--color-rouge), var(--color-orange-fonce));
+  }
+  .texte-degrade {
+    background-image: linear-gradient(90deg, var(--color-rouge), var(--color-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .souligne-bip {
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  .souligne-bip::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3.5rem;
+    height: 3px;
+    background-image: linear-gradient(90deg, var(--color-rouge), var(--color-orange));
+  }
+  .centre .souligne-bip::after,
+  .souligne-bip.centre::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .a-completer {
+    display: inline-block;
+    border: 1px dashed var(--color-orange-fonce);
+    color: var(--color-rouge-fonce);
+    background: #fff7f3;
+    padding: 0 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Atmosphère : fonds, textures et motifs                             */
+/* ------------------------------------------------------------------ */
+
+/* Grain photographique très léger (texture SVG, aucune requête réseau). */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Fond nuit : halos rouge, orange et lagune, quadrillage fin estompé. */
+.fond-nuit {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background-color: var(--color-nuit);
+  background-image:
+    radial-gradient(60rem 36rem at 8% -10%, rgb(215 38 30 / 0.38), transparent 60%),
+    radial-gradient(48rem 30rem at 100% 110%, rgb(242 101 34 / 0.30), transparent 60%),
+    radial-gradient(36rem 26rem at 85% 0%, rgb(15 107 107 / 0.35), transparent 65%),
+    linear-gradient(180deg, var(--color-nuit) 0%, var(--color-nuit-2) 100%);
+}
+.fond-nuit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+/* En couche « components » pour que les utilitaires (text-or…) gardent la main. */
+@layer components {
+  .fond-nuit :is(h1, h2, h3) {
+    color: #fff;
+  }
+}
+
+/* Fond ivoire : motif géométrique inspiré des tissages ivoiriens, très discret. */
+.fond-ivoire {
+  position: relative;
+  background-color: var(--color-ivoire);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23d7261e' stroke-opacity='0.07' stroke-width='1.2'%3E%3Cpath d='M32 6 L58 32 L32 58 L6 32 Z'/%3E%3Cpath d='M32 20 L44 32 L32 44 L20 32 Z'/%3E%3C/g%3E%3Cg fill='%23f26522' fill-opacity='0.08'%3E%3Ccircle cx='0' cy='0' r='2.5'/%3E%3Ccircle cx='64' cy='0' r='2.5'/%3E%3Ccircle cx='0' cy='64' r='2.5'/%3E%3Ccircle cx='64' cy='64' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Fond sable : dégradé chaud, pour les sections « humaines ». */
+.fond-sable {
+  background-image:
+    radial-gradient(40rem 22rem at 100% 0%, rgb(242 101 34 / 0.10), transparent 70%),
+    linear-gradient(180deg, var(--color-ivoire), var(--color-sable));
+}
+
+/* Halos animés (aurore) : dérive lente, coupée si l'utilisateur limite les animations. */
+.aurore {
+  position: absolute;
+  z-index: -1;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(10px);
+  animation: derive 22s ease-in-out infinite alternate;
+}
+@keyframes derive {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(4%, -6%, 0) scale(1.08); }
+  100% { transform: translate3d(-5%, 4%, 0) scale(0.96); }
+}
+
+/* Arcs du pont (signature « Bridge ») : tracé progressif au chargement. */
+.trace-pont path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: trace 2.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+.trace-pont path:nth-child(2) { animation-delay: 0.15s; }
+.trace-pont path:nth-child(3) { animation-delay: 0.3s; }
+.trace-pont path:nth-child(4) { animation-delay: 0.45s; }
+.trace-pont path:nth-child(5) { animation-delay: 0.6s; }
+.trace-pont path:nth-child(n + 6) { animation-delay: 0.9s; }
+@keyframes trace {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Cadre en arche (évocation d'une arche de pont) avec liseré dégradé. */
+.cadre-arche {
+  border-radius: 999px 999px 1.25rem 1.25rem;
+}
+.lisere-degrade {
+  padding: 3px;
+  background-image: linear-gradient(160deg, var(--color-orange), var(--color-rouge) 45%, rgb(227 168 78 / 0.7));
+}
+
+/* Verre dépoli pour les cartes posées sur un fond sombre ou photo. */
+.verre {
+  background: rgb(255 255 255 / 0.07);
+  border: 1px solid rgb(255 255 255 / 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Carte vivante : élévation et liseré dégradé au survol. */
+.carte-vivante {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s;
+}
+.carte-vivante::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, var(--color-rouge), var(--color-orange), var(--color-or));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.carte-vivante:hover,
+.carte-vivante:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px -20px rgb(215 38 30 / 0.35);
+}
+.carte-vivante:hover::before,
+.carte-vivante:focus-within::before {
+  opacity: 1;
+}
+
+/* Grand numéro en filigrane (01, 02…). */
+.numero-filigrane {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(215 38 30 / 0.28);
+}
+
+/* Bandeau défilant des partenaires. */
+.defilement {
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.defilement-piste {
+  display: flex;
+  width: max-content;
+  animation: defile 45s linear infinite;
+}
+.defilement:hover .defilement-piste {
+  animation-play-state: paused;
+}
+@keyframes defile {
+  to { transform: translateX(-50%); }
+}
+
+/* Apparition au défilement (sans JavaScript, navigateurs compatibles). */
+@supports (animation-timeline: view()) {
+  .revele {
+    animation: revele linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+@keyframes revele {
+  from { opacity: 0; transform: translateY(36px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Apparition du bandeau d'accueil. */
+.entree {
+  animation: entree 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.entree-2 { animation-delay: 0.12s; }
+.entree-3 { animation-delay: 0.24s; }
+.entree-4 { animation-delay: 0.36s; }
+@keyframes entree {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Lueur sous les boutons principaux. */
+.lueur {
+  box-shadow: 0 10px 30px -10px rgb(215 38 30 / 0.65);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurore,
+  .defilement-piste,
+  .trace-pont path,
+  .revele,
+  .entree {
+    animation: none !important;
+  }
+  .trace-pont path {
+    stroke-dashoffset: 0;
+  }
+  .carte-vivante:hover,
+  .carte-vivante:focus-within {
+    transform: none;
+  }
+}
+
+/* Contenu des articles (MDX) */
+.prose-bip h2 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.prose-bip h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-bip p,
+.prose-bip ul,
+.prose-bip ol,
+.prose-bip table,
+.prose-bip blockquote {
+  margin-bottom: 1.25rem;
+}
+.prose-bip ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.prose-bip ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+.prose-bip li {
+  margin-bottom: 0.4rem;
+}
+.prose-bip a {
+  color: var(--color-rouge);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-bip strong {
+  color: var(--color-anthracite);
+  font-weight: 600;
+}
+.prose-bip blockquote {
+  border-left: 3px solid var(--color-orange);
+  background: var(--color-fond);
+  padding: 1rem 1.25rem;
+}
+.prose-bip table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  display: block;
+  overflow-x: auto;
+}
+.prose-bip th,
+.prose-bip td {
+  border-bottom: 1px solid var(--color-bordure);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-bip th {
+  font-family: var(--font-titre);
+  font-size: 0.95rem;
+}
+
+/* Bandeau cookies masqué d'emblée si le visiteur a déjà fait son choix. */
+html[data-consentement] .bandeau-cookies {
+  display: none;
+}
