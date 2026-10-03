@@ -83,4 +83,7 @@ prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (
       dédiée existe), référence de la **déclaration ou autorisation ARTCI**, **durées de
       conservation**, validation par un juriste des **transferts de données hors de Côte d'Ivoire** (Vercel, Resend,
       Cloudflare, Google, Meta).
+- [ ] **Conditions générales d'utilisation** — `app/conditions-utilisation/page.tsx` (ajoutées le 03/10/2026) : faire
+      valider par un juriste, notamment la clause de droit applicable et de juridiction compétente. La section RGPD de la
+      politique de confidentialité (visiteurs situés dans l'Union européenne) est à valider en même temps.
 - [ ] **Relecture par un avocat** de l'ensemble du site au regard de la réglementation **AMF-UMOA** et du cadre **OHADA**.

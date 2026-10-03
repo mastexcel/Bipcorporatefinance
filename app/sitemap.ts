@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { chemin: "/contact", priorite: 0.7 },
     { chemin: "/mentions-legales", priorite: 0.2 },
     { chemin: "/confidentialite", priorite: 0.2 },
+    { chemin: "/conditions-utilisation", priorite: 0.2 },
   ];
   return [
     ...pages.map((p) => ({ url: `${site.url}${p.chemin}`, changeFrequency: "monthly" as const, priority: p.priorite })),

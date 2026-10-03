@@ -7,7 +7,7 @@ import { Section, TitreSection } from "@/components/ui/Section";
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
   description:
-    "Protection des données personnelles sur le site de BIP Corporate Finance, conformément à la loi ivoirienne n° 2013-450 du 19 juin 2013.",
+    "Protection des données personnelles sur le site de BIP Corporate Finance : loi ivoirienne n° 2013-450 du 19 juin 2013 et RGPD pour les visiteurs situés dans l'Union européenne.",
   alternates: { canonical: "/confidentialite" },
 };
 
@@ -127,7 +127,27 @@ export default function Confidentialite() {
         </p>
       </Bloc>
 
-      <Bloc titre="7. Cookies et mesure d'audience">
+      <Bloc titre="7. Visiteurs situés dans l'Union européenne (RGPD)">
+        <p>
+          Lorsque vous consultez le site depuis l&apos;Union européenne, le Règlement général sur la protection des données (règlement
+          (UE) 2016/679, « RGPD ») peut s&apos;appliquer au traitement de vos données. Vous disposez alors, en plus des droits décrits
+          ci-dessus, d&apos;un droit à la <strong>limitation</strong> du traitement et à la <strong>portabilité</strong> de vos données,
+          ainsi que du droit de définir des directives relatives à leur sort après votre décès.
+        </p>
+        <p>
+          Les bases légales retenues sont celles indiquées à l&apos;article 3 (consentement, mesures précontractuelles, intérêt légitime).
+          Les transferts de données vers des prestataires situés hors de l&apos;Union européenne sont encadrés par les garanties prévues
+          par le RGPD (décisions d&apos;adéquation ou clauses contractuelles types de la Commission européenne).
+        </p>
+        <p>
+          Vous pouvez exercer vos droits à l&apos;adresse{" "}
+          <a href={`mailto:${site.coordonnees.email}`} className="text-rouge underline underline-offset-2">{site.coordonnees.email}</a>.
+          Nous répondons dans un délai d&apos;un mois. Vous pouvez également introduire une réclamation auprès de l&apos;autorité de
+          protection des données de votre pays de résidence (en France, la CNIL).
+        </p>
+      </Bloc>
+
+      <Bloc titre="8. Cookies et mesure d'audience">
         <p>
           Aucun cookie de mesure d&apos;audience n&apos;est déposé sans votre consentement. Le bandeau affiché lors de votre première visite
           vous permet d&apos;accepter ou de refuser, aussi simplement l&apos;un que l&apos;autre. Vous pouvez modifier votre choix à tout
@@ -140,7 +160,7 @@ export default function Confidentialite() {
         <p>Vos données financières ne sont jamais transmises aux outils de mesure d&apos;audience.</p>
       </Bloc>
 
-      <Bloc titre="8. Sécurité">
+      <Bloc titre="9. Sécurité">
         <p>
           Le site est accessible uniquement en HTTPS. Les formulaires sont protégés contre les envois automatisés, et les données
           financières saisies ne sont ni enregistrées dans une base de données, ni inscrites dans les journaux techniques du serveur.

@@ -48,6 +48,21 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  // HTTPS forcé : toute requête arrivée en HTTP derrière le proxy (Vercel ou autre) est redirigée.
+  // Vercel le fait déjà nativement ; cette règle protège aussi un autre hébergeur. HSTS prend ensuite le relais.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          { type: "header", key: "x-forwarded-proto", value: "http" },
+          { type: "host", value: "(?<hote>.+)" },
+        ],
+        destination: "https://:hote/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 // Plugins déclarés par leur nom (compatibilité Turbopack). remark-gfm : tableaux Markdown.

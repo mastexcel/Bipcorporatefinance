@@ -94,6 +94,7 @@ export function PiedDePage() {
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             <li><Link href="/mentions-legales" className="hover:text-corail">Mentions légales</Link></li>
             <li><Link href="/confidentialite" className="hover:text-corail">Politique de confidentialité</Link></li>
+            <li><Link href="/conditions-utilisation" className="hover:text-corail">Conditions d&apos;utilisation</Link></li>
             <li>
               <button type="button" onClick={rouvrir} className="underline-offset-2 hover:text-corail hover:underline">
                 Gérer les cookies

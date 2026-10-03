@@ -98,13 +98,13 @@ export default function Ceder() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 rounded-lg bg-fond p-6">
+            <div className="mt-8 rounded-2xl bg-ivoire p-6 ring-1 ring-sable">
               <p className="font-titre font-semibold">Où en êtes-vous ?</p>
               <p className="mt-2 text-base text-gris">
                 Notre score de préparation à la cession mesure votre niveau en 15 questions et vous indique vos 3 actions prioritaires.
               </p>
               <div className="mt-4">
-                <LienBouton href="/score-cession">Calculer mon score de préparation</LienBouton>
+                <LienBouton href="/score-cession" variante="secondaire">Calculer mon score de préparation</LienBouton>
               </div>
             </div>
           </div>
