@@ -188,3 +188,17 @@ Règle BIP : aucune photo de personne ne doit être présentée comme membre de 
   `public/logo-icon.png` (monogramme « BIP »). À remplacer par les fichiers vectoriels officiels dès qu'ils sont disponibles.
 - Couleurs et polices : `app/globals.css` (`@theme`). L'orange `#F26522` n'est jamais utilisé pour du texte courant
   (contraste insuffisant) ; les boutons utilisent un dégradé rouge → orange foncé conforme WCAG AA.
+
+## 11. Application installable (téléphone, tablette, ordinateur)
+
+Le site est une application web installable (PWA). Elle fonctionne sur iPhone, iPad, Android, Windows et Mac, sans passer par un magasin d'applications.
+
+- **Manifeste** : `app/manifest.ts` (nom « BIP CF », icônes, raccourcis vers le simulateur, le score et le contact).
+- **Icônes** : `public/icons/` (192 et 512 px, plus une version « maskable » pour Android), tirées du monogramme `public/logo-icon.png`.
+- **Service worker** : `public/sw.js`, enregistré en production par `components/layout/Application.tsx`.
+  - Pages : réseau d'abord, puis copie en cache. Une page jamais consultée affiche `/hors-ligne` quand il n'y a pas de réseau.
+  - Fichiers statiques Next.js : cache d'abord (leurs noms changent à chaque version).
+  - Les routes `/api/*` et les formulaires ne sont jamais mis en cache.
+- **Page d'installation** : `/application`, liée dans le pied de page et le menu mobile. Le bouton « Installer l'application » s'affiche quand le navigateur le permet (Chrome, Edge, Android). Sinon, la page donne les étapes pour chaque appareil, Safari sur iPhone et iPad compris.
+
+Pour forcer tous les utilisateurs à vider leurs anciennes copies (changement profond de structure), incrémentez `VERSION` en tête de `public/sw.js`.

@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { chemin: "/analyses", priorite: 0.6 },
     { chemin: "/a-propos", priorite: 0.6 },
     { chemin: "/contact", priorite: 0.7 },
+    { chemin: "/application", priorite: 0.5 },
     { chemin: "/mentions-legales", priorite: 0.2 },
     { chemin: "/confidentialite", priorite: 0.2 },
     { chemin: "/conditions-utilisation", priorite: 0.2 },

@@ -44,6 +44,9 @@ export function PiedDePage() {
             <li>
               <Link href="/score-cession" className="text-white/70 hover:text-corail">Score de préparation</Link>
             </li>
+            <li>
+              <Link href="/application" className="text-white/70 hover:text-corail">Installer l&apos;application</Link>
+            </li>
           </ul>
         </div>
 

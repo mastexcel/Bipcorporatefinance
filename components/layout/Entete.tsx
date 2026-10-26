@@ -95,6 +95,11 @@ export function Entete() {
                 Score de préparation à la cession
               </Link>
             </li>
+            <li className="pb-2 text-center">
+              <Link href="/application" className="inline-block py-2 font-semibold text-rouge underline-offset-4 hover:underline">
+                Installer l&apos;application
+              </Link>
+            </li>
           </ul>
         </nav>
       )}

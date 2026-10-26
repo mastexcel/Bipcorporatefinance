@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import type { ReactNode } from "react";
 import { Analytics } from "@/components/layout/Analytics";
+import { Application } from "@/components/layout/Application";
 import { BandeauCookies } from "@/components/layout/BandeauCookies";
 import { BoutonWhatsApp } from "@/components/layout/BoutonWhatsApp";
 import { ConsentementProvider } from "@/components/layout/Consentement";
@@ -31,6 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false },
+  // Application installable (iPhone, iPad) : nom et style de la barre d'état.
+  appleWebApp: { capable: true, title: "BIP CF", statusBarStyle: "default" },
 };
 
 export const viewport: Viewport = {
@@ -60,6 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <BoutonWhatsApp />
           <BandeauCookies />
           <Analytics />
+          <Application />
         </ConsentementProvider>
         <JsonLd data={donneesProfessionalService} />
       </body>

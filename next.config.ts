@@ -22,6 +22,8 @@ const csp = [
   "font-src 'self'",
   "connect-src 'self' https://challenges.cloudflare.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net",
   "frame-src https://challenges.cloudflare.com",
+  "worker-src 'self'",
+  "manifest-src 'self'",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -46,7 +48,18 @@ const nextConfig: NextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // Le service worker doit toujours être relu pour que les mises à jour arrivent vite.
+      {
+        source: "/sw.js",
+        headers: [
+          { key: "Content-Type", value: "application/javascript; charset=utf-8" },
+          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+          { key: "Service-Worker-Allowed", value: "/" },
+        ],
+      },
+    ];
   },
   // HTTPS forcé : toute requête arrivée en HTTP derrière le proxy (Vercel ou autre) est redirigée.
   // Vercel le fait déjà nativement ; cette règle protège aussi un autre hébergeur. HSTS prend ensuite le relais.
