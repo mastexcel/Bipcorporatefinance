@@ -28,6 +28,7 @@ export default function Methode() {
   return (
     <>
       <PageHero
+        fond="methode"
         image={images.methode}
         surtitre="Notre méthode"
         titre="Un processus de cession structuré, étape par étape"

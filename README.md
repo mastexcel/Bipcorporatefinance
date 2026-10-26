@@ -182,6 +182,17 @@ Règle BIP : aucune photo de personne ne doit être présentée comme membre de 
 
 **Crédits photos** : photos du Japan Innovation Tour 2026, propriété de Bridge Investment Partners.
 
+## 9 bis. Fonds des bandeaux
+
+Les images de fond (générées pour BIP) sont dans `public/fonds/`, en WebP (30 à 70 Ko chacune) :
+
+- `<page>.webp` : version paysage, utilisée à partir de 768 px de large (tablette et ordinateur) ;
+- `<page>-mobile.webp` : version portrait, pour les téléphones.
+
+Pages concernées : accueil, ceder, investir, lever-des-fonds, methode, references, analyses, a-propos, contact. La page `final` sert au bloc d'appel à l'action de bas de page. La page `outils` sert au simulateur, au score et à la page Application. Les textures `texture-ivoire.webp` (motif en mosaïque) et `sable` habillent les sections claires.
+
+Pour remplacer un fond, gardez le même nom de fichier, une zone sombre à gauche (ordinateur) ou en haut (téléphone) pour le texte, et compressez en WebP (qualité 65 à 70). Le composant `components/ui/Fond.tsx` ajoute un voile sombre qui garantit la lisibilité du texte.
+
 ## 10. Identité visuelle
 
 - Logo : `public/logo.png` (fond transparent, issu du fichier fourni) ; favicon : `app/icon.png`, `app/apple-icon.png` et

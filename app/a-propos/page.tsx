@@ -47,6 +47,7 @@ export default function APropos() {
   return (
     <>
       <PageHero
+        fond="a-propos"
         surtitre="À propos"
         titre="Un conseil indépendant au service des dirigeants"
         intro={site.promesse}

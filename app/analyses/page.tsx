@@ -17,6 +17,7 @@ export default function Analyses() {
   return (
     <>
       <PageHero
+        fond="analyses"
         image={images.analyses}
         surtitre="Analyses"
         titre="Comprendre la valeur de votre entreprise"

@@ -41,6 +41,7 @@ export default function Ceder() {
   return (
     <>
       <PageHero
+        fond="ceder"
         surtitre="Céder mon entreprise"
         titre="Céder au bon prix, au bon acquéreur"
         intro="Nous vous accompagnons de l'évaluation jusqu'au closing : préparation du dossier, recherche d'acquéreurs qualifiés, négociation et transition. Un associé senior suit votre dossier personnellement, en toute confidentialité."

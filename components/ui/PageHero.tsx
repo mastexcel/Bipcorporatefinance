@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { EmplacementImage } from "@/config/images";
 import { ArcsPont, Aurores } from "./Atmosphere";
 import { Container } from "./Container";
+import { Fond, type NomFond } from "./Fond";
 import { Surtitre } from "./Section";
 import { Visuel } from "./Visuel";
 
@@ -13,6 +14,7 @@ export function PageHero({
   image,
   children,
   chevauchement = false,
+  fond,
 }: {
   surtitre?: string;
   titre: string;
@@ -21,11 +23,19 @@ export function PageHero({
   children?: ReactNode;
   /** Laisse de la place sous le texte pour une carte qui chevauche le bandeau. */
   chevauchement?: boolean;
+  /** Image de fond (public/fonds/). Sans image, l'atmosphère CSS (halos, pont tracé) est utilisée. */
+  fond?: NomFond;
 }) {
   return (
     <section className={`fond-nuit grain pt-16 sm:pt-24 ${chevauchement ? "pb-32 sm:pb-40" : "pb-16 sm:pb-24"}`}>
-      <Aurores />
-      <ArcsPont className="absolute inset-x-0 bottom-0 -z-10 h-56 w-full opacity-70 sm:h-72" />
+      {fond ? (
+        <Fond nom={fond} prioritaire />
+      ) : (
+        <>
+          <Aurores />
+          <ArcsPont className="absolute inset-x-0 bottom-0 -z-10 h-56 w-full opacity-70 sm:h-72" />
+        </>
+      )}
       <Container className={image ? "grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]" : ""}>
         <div className="max-w-3xl">
           {surtitre && (

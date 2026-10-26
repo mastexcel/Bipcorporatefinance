@@ -14,6 +14,7 @@ export default function PageScore() {
   return (
     <>
       <PageHero
+        fond="outils"
         chevauchement
         surtitre="Score de préparation à la cession"
         titre={"Votre entreprise est-elle prête à être cédée\u00a0?"}

@@ -64,6 +64,7 @@ export default function PageApplication() {
   return (
     <>
       <PageHero
+        fond="outils"
         surtitre="Application"
         titre="BIP Corporate Finance, dans votre poche"
         intro="Installez l'application sur votre téléphone, votre tablette ou votre ordinateur pour retrouver le simulateur de valorisation, le score de préparation à la cession et un associé BIP en un geste."

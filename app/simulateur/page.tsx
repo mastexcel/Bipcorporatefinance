@@ -14,6 +14,7 @@ export default function PageSimulateur() {
   return (
     <>
       <PageHero
+        fond="outils"
         chevauchement
         surtitre="Simulateur de valorisation"
         titre={"Combien vaut votre entreprise\u00a0?"}

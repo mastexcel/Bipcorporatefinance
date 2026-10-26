@@ -31,6 +31,7 @@ export default function LeverDesFonds() {
   return (
     <>
       <PageHero
+        fond="lever-des-fonds"
         surtitre="Lever des fonds"
         titre="Ouvrir votre capital au bon partenaire"
         intro="Financer une croissance, un investissement ou une réorganisation en accueillant un investisseur : nous préparons votre entreprise, identifions les bons partenaires et vous accompagnons dans la négociation."

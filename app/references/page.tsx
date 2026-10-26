@@ -18,6 +18,7 @@ export default function References() {
   return (
     <>
       <PageHero
+        fond="references"
         image={images.references}
         surtitre="Références"
         titre="Nos références"

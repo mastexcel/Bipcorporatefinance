@@ -11,7 +11,7 @@ import { FriseMethode } from "@/components/sections/FriseMethode";
 import { BandeauPartenaires, GrilleMissions } from "@/components/sections/Missions";
 import { Tombstone } from "@/components/sections/Tombstone";
 import { LienBouton } from "@/components/ui/Button";
-import { ArcsPont, Aurores } from "@/components/ui/Atmosphere";
+import { Fond } from "@/components/ui/Fond";
 import { Container } from "@/components/ui/Container";
 import {
   IconeAssocie,
@@ -99,8 +99,7 @@ export default function Accueil() {
     <>
       {/* Bandeau d'accueil immersif */}
       <section className="fond-nuit grain pt-14 pb-28 sm:pt-20 sm:pb-40 lg:pt-24">
-        <Aurores />
-        <ArcsPont className="absolute inset-x-0 bottom-0 -z-10 h-56 w-full sm:h-80" />
+        <Fond nom="accueil" prioritaire position="center 60%" />
         <Container className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
           <div>
             <div className="entree">

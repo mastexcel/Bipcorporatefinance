@@ -23,6 +23,7 @@ export default function Investir() {
   return (
     <>
       <PageHero
+        fond="investir"
         surtitre="Investir en Côte d'Ivoire"
         titre="Accédez aux meilleures PME de Côte d'Ivoire et de l'UEMOA"
         intro="Pour les fonds d'investissement, les groupes régionaux et étrangers et les family offices qui souhaitent investir dans des entreprises non cotées d'Afrique de l'Ouest."

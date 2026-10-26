@@ -16,6 +16,7 @@ export default function Contact() {
   return (
     <>
       <PageHero
+        fond="contact"
         image={images.contact}
         surtitre="Contact"
         titre="Parlons de votre projet"
