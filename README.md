@@ -213,3 +213,24 @@ Le site est une application web installable (PWA). Elle fonctionne sur iPhone, i
 - **Page d'installation** : `/application`, liée dans le pied de page et le menu mobile. Le bouton « Installer l'application » s'affiche quand le navigateur le permet (Chrome, Edge, Android). Sinon, la page donne les étapes pour chaque appareil, Safari sur iPhone et iPad compris.
 
 Pour forcer tous les utilisateurs à vider leurs anciennes copies (changement profond de structure), incrémentez `VERSION` en tête de `public/sw.js`.
+
+## 12. Application Android (APK)
+
+Le dossier `android/` contient une application Android native minimale qui ouvre le site officiel en plein écran (WebView).
+
+- Les pages du site restent dans l'application. WhatsApp, le téléphone, l'e-mail et les sites externes s'ouvrent dans l'application adaptée.
+- Sans réseau, l'application affiche un écran « hors connexion » aux couleurs de BIP avec un bouton « Réessayer » et le numéro de téléphone.
+- Identifiant : `net.bridgeinvestmentpartners.corporatefinance`. Android 7 (API 24) minimum, cible API 34. Signature v2 et v3.
+
+**Construire l'APK** (Ubuntu, sans Android Studio) :
+
+```bash
+sudo apt-get install aapt apksigner zipalign dalvik-exchange android-sdk-platform-23 openjdk-21-jdk
+BIP_KEYSTORE=/chemin/bip-corporate-finance.jks BIP_KS_PASS='mot de passe' ./android/build.sh
+# APK produit : android/build/BIP-Corporate-Finance.apk
+```
+
+- `BIP_URL` permet de pointer vers une autre adresse (préproduction, par exemple).
+- **Clé de signature** : le fichier `.jks` et son mot de passe ne sont **jamais** versionnés (voir `android/.gitignore`). Conservez-les en lieu sûr : toute mise à jour de l'application doit être signée avec la même clé, sinon Android refusera de l'installer par-dessus l'ancienne version.
+- **Nouvelle version** : augmentez `android:versionCode` (et `versionName`) dans `android/AndroidManifest.xml` avant de reconstruire.
+- **Google Play** : le Play Store exige un fichier AAB construit avec Android Studio ou Gradle. Le code de `android/` peut y être repris tel quel.
