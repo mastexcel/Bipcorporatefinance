@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { BoutonInstaller } from "@/components/layout/BoutonInstaller";
+import { applicationAndroid } from "@/config/application";
+import { classesBouton } from "@/components/ui/Button";
 import { AppelFinal } from "@/components/sections/AppelFinal";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section, TitreSection } from "@/components/ui/Section";
@@ -29,7 +31,7 @@ const appareils: { titre: string; icone: React.ReactNode; parcours: { systeme: s
     ),
     parcours: [
       { systeme: "iPhone (Safari)", etapes: ["Touchez le bouton Partager (carré avec une flèche).", "Choisissez « Sur l'écran d'accueil ».", "Validez avec « Ajouter »."] },
-      { systeme: "Android (Chrome)", etapes: ["Touchez le bouton « Installer l'application » ci-dessus,", "ou ouvrez le menu ⋮ et choisissez « Installer l'application ».", "Confirmez l'installation."] },
+      { systeme: "Android", etapes: ["Téléchargez l'application Android (APK) ci-dessus,", "ou, dans Chrome, ouvrez le menu ⋮ et choisissez « Installer l'application ».", "Confirmez l'installation."] },
     ],
   },
   {
@@ -60,6 +62,14 @@ const appareils: { titre: string; icone: React.ReactNode; parcours: { systeme: s
   },
 ];
 
+function IconeAndroid() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 1 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z" />
+    </svg>
+  );
+}
+
 export default function PageApplication() {
   return (
     <>
@@ -70,7 +80,55 @@ export default function PageApplication() {
         intro="Installez l'application sur votre téléphone, votre tablette ou votre ordinateur pour retrouver le simulateur de valorisation, le score de préparation à la cession et un associé BIP en un geste."
       >
         <BoutonInstaller />
+        <a href={applicationAndroid.fichier} download className={classesBouton("clair")}>
+          <IconeAndroid /> Télécharger pour Android
+        </a>
       </PageHero>
+
+      <Section fond="motif" id="android">
+        <div className="fond-nuit grain revele grid gap-10 rounded-3xl p-8 shadow-2xl sm:p-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <p className="mb-4 flex items-center gap-3 text-sm font-semibold tracking-[0.2em] text-corail uppercase">
+              <span aria-hidden="true" className="degrade-bip inline-block h-0.5 w-8 rounded-full" />
+              Application Android
+            </p>
+            <h2 className="text-3xl tracking-tight sm:text-4xl">Téléchargez l&apos;application sur votre téléphone Android</h2>
+            <p className="mt-5 text-lg text-white/80">
+              L&apos;application BIP CF ouvre le site en plein écran : simulateur, score de préparation, analyses et contact avec un
+              associé. Les liens WhatsApp, téléphone et e-mail s&apos;ouvrent directement dans vos applications.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a href={applicationAndroid.fichier} download className={classesBouton("principal")}>
+                <IconeAndroid /> Télécharger l&apos;APK
+              </a>
+              <span className="text-base text-white/70">
+                Version {applicationAndroid.version} · {applicationAndroid.taille} · {applicationAndroid.androidMinimum} et plus
+              </span>
+            </div>
+          </div>
+          <div className="verre rounded-2xl p-6 sm:p-8">
+            <h3 className="text-xl">Installer en 3 étapes</h3>
+            <ol className="mt-4 space-y-3 text-base text-white/85">
+              {[
+                "Touchez « Télécharger l'APK » depuis votre téléphone Android.",
+                "Ouvrez le fichier téléchargé. Si Android le demande, autorisez l'installation depuis votre navigateur.",
+                "Touchez « Installer » : l'icône BIP CF apparaît sur votre écran d'accueil.",
+              ].map((e, i) => (
+                <li key={e} className="flex gap-3">
+                  <span className="degrade-bip flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-titre text-sm font-bold text-white">
+                    {i + 1}
+                  </span>
+                  {e}
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 border-t border-white/10 pt-4 text-sm text-white/60">
+              Application publiée par Bridge Investment Partners. Empreinte SHA-256 du fichier :{" "}
+              <span className="font-mono break-all text-white/75">{applicationAndroid.sha256}</span>
+            </p>
+          </div>
+        </div>
+      </Section>
 
       <Section>
         <TitreSection surtitre="Pourquoi l'installer" titre="Une vraie application, sans passer par un magasin" />
@@ -85,7 +143,7 @@ export default function PageApplication() {
         </div>
       </Section>
 
-      <Section fond="motif" id="installer">
+      <Section alternee id="installer">
         <TitreSection surtitre="Installation" titre="En trois gestes, sur chaque appareil" />
         <div className="grid gap-6 lg:grid-cols-3">
           {appareils.map((a) => (

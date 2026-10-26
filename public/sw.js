@@ -43,7 +43,7 @@ self.addEventListener("fetch", (event) => {
   if (requete.method !== "GET") return;
   const url = new URL(requete.url);
   if (url.origin !== self.location.origin) return;
-  if (url.pathname.startsWith("/api/")) return;
+  if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/telechargements/")) return;
   // Données de navigation interne de Next.js : laissées au réseau.
   if (url.searchParams.has("_rsc") || requete.headers.get("RSC") === "1") return;
 

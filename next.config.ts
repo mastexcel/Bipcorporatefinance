@@ -50,6 +50,15 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
+      // Application Android : bon type de fichier et téléchargement direct.
+      {
+        source: "/telechargements/:fichier*.apk",
+        headers: [
+          { key: "Content-Type", value: "application/vnd.android.package-archive" },
+          { key: "Content-Disposition", value: "attachment" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
       // Le service worker doit toujours être relu pour que les mises à jour arrivent vite.
       {
         source: "/sw.js",
