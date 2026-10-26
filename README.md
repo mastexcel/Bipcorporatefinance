@@ -234,3 +234,4 @@ BIP_KEYSTORE=/chemin/bip-corporate-finance.jks BIP_KS_PASS='mot de passe' ./andr
 - **Clé de signature** : le fichier `.jks` et son mot de passe ne sont **jamais** versionnés (voir `android/.gitignore`). Conservez-les en lieu sûr : toute mise à jour de l'application doit être signée avec la même clé, sinon Android refusera de l'installer par-dessus l'ancienne version.
 - **Nouvelle version** : augmentez `android:versionCode` (et `versionName`) dans `android/AndroidManifest.xml` avant de reconstruire.
 - **Google Play** : le Play Store exige un fichier AAB construit avec Android Studio ou Gradle. Le code de `android/` peut y être repris tel quel.
+- **Téléchargement sur le site** : la page `/application` propose l'APK servi depuis `public/telechargements/bip-corporate-finance.apk`. Après chaque nouvelle version, copiez-y le nouvel APK et mettez à jour `config/application.ts` (version, taille, empreinte SHA-256 obtenue avec `sha256sum`).
