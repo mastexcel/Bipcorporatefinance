@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hors connexion</title>
+<style>
+  html,body{margin:0;height:100%;background:#12131a;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  body{display:flex;align-items:center;justify-content:center;text-align:center;
+    background:radial-gradient(40rem 26rem at 0% 0%,rgba(215,38,30,.35),transparent 60%),radial-gradient(34rem 22rem at 100% 100%,rgba(242,101,34,.28),transparent 60%),#12131a}
+  main{padding:32px 24px;max-width:28rem}
+  .sur{color:#ff8a5c;letter-spacing:.2em;font-size:.8rem;font-weight:600;text-transform:uppercase}
+  h1{font-size:1.9rem;line-height:1.15;margin:.6rem 0 1rem}
+  p{color:rgba(255,255,255,.8);line-height:1.55;font-size:1.05rem}
+  a.btn{display:inline-block;margin-top:1.4rem;padding:.9rem 1.6rem;border-radius:.4rem;color:#fff;text-decoration:none;font-weight:700;
+    background:linear-gradient(90deg,#d7261e,#d2461a);box-shadow:0 10px 30px -10px rgba(215,38,30,.65)}
+  a.tel{color:#ff8a5c;font-weight:600}
+  svg{display:block;margin:0 auto 1.2rem}
+</style>
+</head>
+<body>
+<main>
+  <svg width="220" height="70" viewBox="0 0 1000 300" fill="none" aria-hidden="true">
+    <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#d7261e"/><stop offset=".6" stop-color="#f26522"/><stop offset="1" stop-color="#e3a84e"/></linearGradient></defs>
+    <path d="M60 280 Q500 -140 940 280" stroke="url(#g)" stroke-width="10"/>
+    <path d="M0 285 H1000" stroke="rgba(255,255,255,.25)" stroke-width="5"/>
+  </svg>
+  <div class="sur">Hors connexion</div>
+  <h1>Vous êtes hors connexion</h1>
+  <p>L'application BIP Corporate Finance a besoin d'internet pour s'ouvrir. Vérifiez votre connexion, puis réessayez.</p>
+  <a class="btn" href="bip://reessayer">Réessayer</a>
+  <p style="margin-top:1.6rem;font-size:.95rem">Besoin d'un associé tout de suite ?<br>Appelez le <a class="tel" href="tel:+2250584374848">+225 05 84 37 48 48</a></p>
+</main>
+</body>
+</html>

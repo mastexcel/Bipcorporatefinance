@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BIP" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/nuit</item>
+        <item name="android:colorPrimary">@color/nuit</item>
+        <item name="android:colorPrimaryDark">@color/nuit</item>
+        <item name="android:colorAccent">#FFD7261E</item>
+        <item name="android:statusBarColor">@color/blanc</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/nuit</item>
+    </style>
+</resources>

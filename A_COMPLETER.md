@@ -1,0 +1,89 @@
+# Informations et validations à fournir par BIP
+
+Chaque point indique où la modification se fait. Les emplacements visibles sur le site sont signalés par
+**[À COMPLÉTER]**, **[À CONFIRMER]** ou **[À VALIDER]**.
+
+## 1. Paramètres financiers du simulateur — `config/valuation.ts`
+
+- [ ] **Vérifier si Damodaran a publié une prime pays plus récente** (mise à jour de juillet 2026 du fichier « ctryprem »)
+      et, le cas échéant, mettre à jour **ensemble** les trois valeurs : taux sans risque (Bund 10 ans), prime de marché
+      mature et prime pays Côte d'Ivoire, avec source et date. À refaire **au moins une fois par an**.
+- [ ] Valider la **grille des multiples sectoriels** (EBE et CA, bas / central / haut) — actuellement « provisoire ».
+- [ ] Valider la **croissance à long terme** g = 3 %.
+- [ ] Valider le **taux d'impôt sur les sociétés** de 25 % avec le conseil fiscal.
+- [ ] Valider les **ajustements qualitatifs** (valeurs par défaut du cahier des charges).
+- [ ] Fournir, si souhaité, la **prime pays des autres pays de l'UEMOA** (Bénin, Burkina Faso, Guinée-Bissau, Mali, Niger,
+      Sénégal, Togo). En attendant, le simulateur applique la prime de la Côte d'Ivoire avec un avertissement.
+- [ ] Relire l'ensemble sur la page interne `/simulateur/methodologie`.
+
+Déjà validé le 30/09/2026 : taux sans risque 3,61 % (Bund 10 ans, 29/09/2026), prime de marché 4,20 % (Damodaran, 01/07/2026),
+prime pays Côte d'Ivoire 3,90 % (Damodaran, 05/01/2026, Ba2), prime de taille (5 / 4 / 3,5 / 3 pts), décote de taille
+(−15 % / −5 % / 0 %), traitement de l'EBE négatif, règles du score de préparation.
+
+## 2. Score de préparation — `config/readiness.ts`
+
+- [ ] Valider le **libellé des 15 questions**, des options et le **nombre de points** de chaque réponse
+      (structure 5 × 20 points, seuils et règle bloquante déjà validés).
+- [ ] Relire les **actions conseillées** associées à chaque question.
+
+## 3. Coordonnées et réseaux — `config/site.ts` et variables d'environnement
+
+- [x] Numéro **WhatsApp** : +225 05 84 37 48 48 (fourni le 30/09/2026, intégré dans `config/site.ts`).
+- [x] **E-mail** de contact et de réception des demandes : contact@bridgeinvestmentpartners.net (fourni le 30/09/2026).
+- [x] **Téléphone** : +225 05 84 37 48 48 (même numéro que le WhatsApp, confirmé le 30/09/2026).
+- [x] **Adresse** : lot 100, îlot 101, Riviera Faya Akouédo, Cocody, Abidjan (confirmée le 30/09/2026).
+- [ ] URL des pages **LinkedIn** et **Facebook**.
+- [x] **Adresse du site** : `corporatefinance.bridgeinvestmentpartners.net` (validée le 30/09/2026). À faire lors de la
+      mise en ligne : ajouter le sous-domaine dans Vercel et l'enregistrement DNS `CNAME` chez le gestionnaire du domaine
+      (README § 8), puis un lien « Corporate Finance » sur le site actuel de BIP.
+- [ ] Vérifier le domaine **bridgeinvestmentpartners.net** dans Resend pour pouvoir envoyer depuis
+      contact@bridgeinvestmentpartners.net (`EMAIL_FROM`).
+- [ ] Comptes et clés : **Resend**, **Cloudflare Turnstile**, **Google Analytics 4**, **Meta Pixel**.
+
+## 4. Contenus
+
+- [x] **Chiffres clés** de l'accueil : 16+ ans d'expérience, 35+ études et business plans, 9 projets immobiliers
+      financés (tirés des CV du gérant, `content/equipe.ts`). À valider et à mettre à jour au fil des missions.
+- [ ] **Références d'opérations** (tombstones), avec l'accord écrit des clients — `config/references.ts`.
+      En attendant, l'accueil et la page Références affichent les **missions de conseil** du groupe et la liste des
+      **partenaires** tirées de la présentation institutionnelle (`content/groupe.ts`).
+- [x] Les **clients et partenaires cités** acceptent d'être nommés sur le site (confirmé par BIP le 30/09/2026).
+- [x] **MBA** : Banque et Finance, option corporate finance, CESAG Business School ; **16 ans** d'expérience (confirmés).
+- [x] **Profil du gérant** (M. ATTEMENE Zatri Jean-Jacques) rédigé d'après ses CV — `content/equipe.ts`.
+- [x] **Photo** du directeur général : photo du Japan Innovation Tour 2026 fournie par BIP, recadrée
+      (`public/equipe/jean-jacques-attemene.webp`).
+- [ ] **Lien LinkedIn**, profils d'autres membres
+      éventuels, et **photos terrain** originales (avec l'accord des personnes photographiées).
+- [x] **Histoire de BIP** : paragraphe rédigé d'après les CV (page À propos) — à relire.
+- [x] **Durées indicatives** des 10 étapes du processus (fournies le 30/09/2026 ; durée totale 6 à 12 mois).
+- [ ] Relire les **réponses de la FAQ** et les **3 articles** de départ.
+
+## 5. Photos — `config/images.ts`
+
+- [x] Photos du **Japan Innovation Tour 2026** (fournies par BIP le 30/09/2026) utilisées sur l'accueil, Céder,
+      Investir, Lever des fonds et À propos (`public/images/`).
+- [ ] Confirmer que les personnes visibles sur ces photos (intervenants, participants) sont d'accord pour apparaître
+      sur le site.
+
+## 6. Identité visuelle
+
+- [ ] **Logo vectoriel officiel** (SVG) et **version sur fond sombre** réalisés par le graphiste, pour remplacer
+      `public/logo.png`, `public/logo-icon.png`, `app/icon.png` et `app/apple-icon.png`.
+
+## 7. Textes juridiques
+
+- [x] **Mentions légales** : forme juridique, capital, RCCM, compte contribuable, siège et directeur de la publication
+      renseignés d'après le RCCM et la DFE fournis le 30/09/2026 (`config/site.ts`, objet `societe`).
+- [x] **Lot et îlot du siège** : lot 100, îlot 101 (confirmés par BIP le 30/09/2026).
+- [ ] **Confirmer l'hébergeur** (Vercel) une fois la mise en ligne décidée.
+- [x] **Objet social** : BIP confirme (30/09/2026) que le conseil en fusions-acquisitions et l'évaluation d'entreprise
+      relèvent de l'activité « Expertise » déclarée.
+- [ ] **Politique de confidentialité** — `app/confidentialite/page.tsx` : date de mise à jour,
+      e-mail pour les données personnelles (contact@bridgeinvestmentpartners.net par défaut, à remplacer si une adresse
+      dédiée existe), référence de la **déclaration ou autorisation ARTCI**, **durées de
+      conservation**, validation par un juriste des **transferts de données hors de Côte d'Ivoire** (Vercel, Resend,
+      Cloudflare, Google, Meta).
+- [ ] **Conditions générales d'utilisation** — `app/conditions-utilisation/page.tsx` (ajoutées le 03/10/2026) : faire
+      valider par un juriste, notamment la clause de droit applicable et de juridiction compétente. La section RGPD de la
+      politique de confidentialité (visiteurs situés dans l'Union européenne) est à valider en même temps.
+- [ ] **Relecture par un avocat** de l'ensemble du site au regard de la réglementation **AMF-UMOA** et du cadre **OHADA**.

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nom_app">BIP CF</string>
+    <!-- Adresse du site chargé par l'application (remplacée par build.sh si BIP_URL est défini). -->
+    <string name="url_site" translatable="false">https://corporatefinance.bridgeinvestmentpartners.net/?source=android</string>
+</resources>
